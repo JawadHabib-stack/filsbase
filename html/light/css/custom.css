@@ -559,6 +559,11 @@ header.main-header .container-fluid{
 	margin: 0;
 }
 
+.navbar-brand img{
+	max-height: 80px;
+	width: auto;
+}
+
 .main-menu .nav-menu-wrapper{
 	flex: 1;
 	text-align: center;
@@ -2738,7 +2743,7 @@ header.main-header .container-fluid{
 
 .footer-logo img{
 	width: 100%;
-	max-width: 160px;
+	max-width: 250px;
 }
 
 .about-footer-content{
