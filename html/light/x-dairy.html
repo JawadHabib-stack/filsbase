@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="Awaiken">
+	<!-- Page Title -->
+    <title>X Dairy - Automate Dairy Management System</title>
+	<!-- Favicon Icon -->
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+	<!-- Google Fonts Css-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+	<!-- Bootstrap Css -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<!-- SlickNav Css -->
+	<link href="css/slicknav.min.css" rel="stylesheet">
+	<!-- Swiper Css -->
+	<link rel="stylesheet" href="css/swiper-bundle.min.css">
+	<!-- Font Awesome Icon Css-->
+	<link href="css/all.min.css" rel="stylesheet" media="screen">
+	<!-- Animated Css -->
+	<link href="css/animate.css" rel="stylesheet">
+    <!-- Magnific Popup Core Css File -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<!-- Mouse Cursor Css File -->
+	<link rel="stylesheet" href="css/mousecursor.css">
+	<!-- Main Custom Css -->
+	<link href="css/custom.css" rel="stylesheet" media="screen">
+	<style>
+		/* ===== X Dairy Page Styles ===== */
+		.xd-hero {
+			background: linear-gradient(135deg, #1a3a6b 0%, #1565c0 60%, #1976d2 100%);
+			padding: 140px 0 60px;
+			position: relative;
+			overflow: hidden;
+			color: #fff;
+		}
+		.xd-hero::before {
+			content: '';
+			position: absolute;
+			top: -80px; right: -80px;
+			width: 400px; height: 400px;
+			border-radius: 50%;
+			background: rgba(255,255,255,0.05);
+		}
+		.xd-badge {
+			display: inline-block;
+			background: rgba(255,255,255,0.15);
+			border: 1px solid rgba(255,255,255,0.3);
+			color: #fff;
+			font-size: 11px;
+			font-weight: 700;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			padding: 6px 16px;
+			border-radius: 20px;
+			margin-bottom: 20px;
+		}
+		.xd-hero h1 {
+			font-size: 42px;
+			font-weight: 800;
+			color: #fff;
+			line-height: 1.2;
+			margin-bottom: 20px;
+		}
+		.xd-hero h1 span { color: #90caf9; }
+		.xd-hero p {
+			color: rgba(255,255,255,0.85);
+			font-size: 15px;
+			line-height: 1.8;
+			margin-bottom: 30px;
+			max-width: 560px;
+		}
+		.xd-hero-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 30px; }
+		.xd-btn {
+			display: inline-block;
+			padding: 12px 24px;
+			border-radius: 6px;
+			font-size: 13px;
+			font-weight: 700;
+			text-decoration: none;
+			transition: all 0.3s;
+			letter-spacing: 0.5px;
+		}
+		.xd-btn-primary { background: #fff; color: #1565c0; }
+		.xd-btn-primary:hover { background: #e3f2fd; color: #0d47a1; }
+		.xd-btn-outline {
+			background: transparent;
+			color: #fff;
+			border: 2px solid rgba(255,255,255,0.5);
+		}
+		.xd-btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); color: #fff; }
+		.xd-btn-success { background: #43a047; color: #fff; }
+		.xd-btn-success:hover { background: #388e3c; color: #fff; }
+		.xd-hero-image {
+			position: relative;
+			text-align: center;
+		}
+		.xd-hero-image img {
+			max-width: 100%;
+			border-radius: 16px;
+			box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+		}
+		.xd-hero-label {
+			position: absolute;
+			bottom: -20px;
+			right: 20px;
+			background: #fff;
+			color: #1565c0;
+			font-size: 11px;
+			font-weight: 800;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			padding: 10px 18px;
+			border-radius: 8px;
+			box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+		}
+		/* ===== Steps Section ===== */
+		.xd-steps {
+			background: #f8f9fa;
+			padding: 60px 0;
+		}
+		.xd-step-item {
+			display: flex;
+			align-items: flex-start;
+			gap: 16px;
+			padding: 24px;
+			background: #fff;
+			border-radius: 12px;
+			box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+			height: 100%;
+			transition: transform 0.3s, box-shadow 0.3s;
+		}
+		.xd-step-item:hover {
+			transform: translateY(-4px);
+			box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+		}
+		.xd-step-num {
+			width: 48px; height: 48px;
+			background: var(--accent-color, #1565c0);
+			color: #fff;
+			border-radius: 50%;
+			display: flex; align-items: center; justify-content: center;
+			font-size: 18px;
+			font-weight: 800;
+			flex-shrink: 0;
+		}
+		.xd-step-content h4 {
+			font-size: 15px;
+			font-weight: 700;
+			color: #1a1a2e;
+			margin-bottom: 6px;
+		}
+		.xd-step-content p {
+			font-size: 13px;
+			color: #666;
+			margin: 0;
+			line-height: 1.6;
+		}
+		/* ===== Modules Section ===== */
+		.xd-modules {
+			padding: 80px 0;
+			background: #fff;
+		}
+		.xd-section-header {
+			text-align: center;
+			margin-bottom: 50px;
+		}
+		.xd-section-header .sub-label {
+			display: inline-block;
+			background: #e3f2fd;
+			color: #1565c0;
+			font-size: 12px;
+			font-weight: 700;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			padding: 6px 16px;
+			border-radius: 20px;
+			margin-bottom: 14px;
+		}
+		.xd-section-header h2 {
+			font-size: 36px;
+			font-weight: 800;
+			color: #1a1a2e;
+			margin-bottom: 14px;
+		}
+		.xd-section-header p {
+			color: #666;
+			font-size: 15px;
+			max-width: 600px;
+			margin: 0 auto;
+		}
+		.xd-module-card {
+			padding: 28px 24px;
+			border: 1px solid #e8edf2;
+			border-radius: 12px;
+			background: #fff;
+			height: 100%;
+			transition: all 0.3s;
+			margin-bottom: 24px;
+		}
+		.xd-module-card:hover {
+			border-color: #1565c0;
+			box-shadow: 0 8px 30px rgba(21,101,192,0.12);
+			transform: translateY(-4px);
+		}
+		.xd-module-icon {
+			width: 52px; height: 52px;
+			background: #e3f2fd;
+			border-radius: 12px;
+			display: flex; align-items: center; justify-content: center;
+			margin-bottom: 16px;
+			font-size: 22px;
+			color: #1565c0;
+		}
+		.xd-module-card h4 {
+			font-size: 15px;
+			font-weight: 700;
+			color: #1a1a2e;
+			margin-bottom: 8px;
+		}
+		.xd-module-card p {
+			font-size: 13px;
+			color: #777;
+			margin: 0;
+			line-height: 1.6;
+		}
+		/* ===== Feature Sections ===== */
+		.xd-feature-section {
+			padding: 80px 0;
+		}
+		.xd-feature-section.bg-light-gray { background: #f8f9fa; }
+		.xd-feature-section.bg-white { background: #fff; }
+		.xd-feature-section.bg-dark-blue {
+			background: linear-gradient(135deg, #1a3a6b 0%, #1565c0 100%);
+			color: #fff;
+		}
+		.xd-feature-section.bg-dark-blue .xd-section-header h2,
+		.xd-feature-section.bg-dark-blue .xd-section-header p { color: #fff; }
+		.xd-feature-section.bg-dark-blue .xd-section-header .sub-label {
+			background: rgba(255,255,255,0.2);
+			color: #fff;
+		}
+		.xd-feature-title {
+			font-size: 30px;
+			font-weight: 800;
+			color: #1a1a2e;
+			margin-bottom: 16px;
+			line-height: 1.3;
+		}
+		.xd-feature-title span { color: #1565c0; }
+		.xd-feature-text {
+			font-size: 15px;
+			color: #555;
+			line-height: 1.8;
+			margin-bottom: 24px;
+		}
+		.xd-feature-list { list-style: none; padding: 0; margin: 0 0 30px; }
+		.xd-feature-list li {
+			display: flex;
+			align-items: flex-start;
+			gap: 12px;
+			padding: 12px 0;
+			border-bottom: 1px solid #f0f0f0;
+			font-size: 14px;
+			color: #333;
+		}
+		.xd-feature-list li:last-child { border-bottom: none; }
+		.xd-feature-list li i {
+			color: #1565c0;
+			margin-top: 2px;
+			flex-shrink: 0;
+		}
+		.xd-feature-list li strong { display: block; margin-bottom: 2px; }
+		.xd-screen-mockup {
+			background: #e3f2fd;
+			border-radius: 16px;
+			padding: 24px;
+			box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+			overflow: hidden;
+		}
+		.xd-screen-header {
+			background: #1565c0;
+			border-radius: 8px 8px 0 0;
+			padding: 10px 16px;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			margin: -24px -24px 0;
+		}
+		.xd-dot { width: 10px; height: 10px; border-radius: 50%; }
+		.xd-dot.red { background: #ef5350; }
+		.xd-dot.yellow { background: #fdd835; }
+		.xd-dot.green { background: #66bb6a; }
+		.xd-screen-body {
+			background: #fff;
+			border-radius: 0 0 8px 8px;
+			padding: 20px;
+			margin: 0 -24px -24px;
+		}
+		.xd-table-row {
+			display: flex;
+			gap: 8px;
+			margin-bottom: 8px;
+			align-items: center;
+		}
+		.xd-table-cell {
+			flex: 1;
+			background: #f5f7fa;
+			border-radius: 4px;
+			padding: 8px 10px;
+			font-size: 12px;
+			color: #555;
+		}
+		.xd-table-cell.header {
+			background: #e3f2fd;
+			color: #1565c0;
+			font-weight: 700;
+		}
+		.xd-chart-bar {
+			display: flex;
+			align-items: flex-end;
+			gap: 6px;
+			height: 80px;
+			padding-top: 10px;
+		}
+		.xd-bar {
+			flex: 1;
+			background: #1565c0;
+			border-radius: 4px 4px 0 0;
+			opacity: 0.7;
+		}
+		.xd-bar:nth-child(2) { opacity: 0.9; background: #42a5f5; }
+		.xd-bar:nth-child(3) { opacity: 1; background: #1565c0; }
+		.xd-bar:nth-child(4) { opacity: 0.6; background: #42a5f5; }
+		.xd-bar:nth-child(5) { opacity: 0.8; background: #1565c0; }
+		.xd-bar:nth-child(6) { opacity: 1; background: #42a5f5; }
+		/* ===== Pricing ===== */
+		.xd-pricing {
+			padding: 80px 0;
+			background: #f8f9fa;
+		}
+		.xd-price-card {
+			background: #fff;
+			border-radius: 16px;
+			padding: 36px 30px;
+			border: 2px solid #e8edf2;
+			height: 100%;
+			transition: all 0.3s;
+			position: relative;
+		}
+		.xd-price-card:hover {
+			border-color: #1565c0;
+			box-shadow: 0 12px 40px rgba(21,101,192,0.15);
+			transform: translateY(-6px);
+		}
+		.xd-price-card.highlighted {
+			border-color: #1565c0;
+			background: linear-gradient(135deg, #1a3a6b 0%, #1565c0 100%);
+			color: #fff;
+		}
+		.xd-price-card.highlighted h3,
+		.xd-price-card.highlighted h2,
+		.xd-price-card.highlighted p,
+		.xd-price-card.highlighted li { color: #fff !important; }
+		.xd-price-badge {
+			position: absolute;
+			top: -14px; left: 50%;
+			transform: translateX(-50%);
+			background: #43a047;
+			color: #fff;
+			font-size: 11px;
+			font-weight: 700;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			padding: 5px 16px;
+			border-radius: 20px;
+		}
+		.xd-price-card h3 {
+			font-size: 16px;
+			font-weight: 700;
+			color: #1a1a2e;
+			margin-bottom: 8px;
+		}
+		.xd-price-card .price-desc {
+			font-size: 13px;
+			color: #888;
+			margin-bottom: 20px;
+		}
+		.xd-price-card h2 {
+			font-size: 40px;
+			font-weight: 800;
+			color: #1565c0;
+			margin-bottom: 4px;
+		}
+		.xd-price-card.highlighted h2 { color: #90caf9; }
+		.xd-price-card h2 sub {
+			font-size: 14px;
+			font-weight: 400;
+			color: #999;
+		}
+		.xd-price-card.highlighted h2 sub { color: rgba(255,255,255,0.6); }
+		.xd-price-divider {
+			border: none;
+			border-top: 1px solid #e8edf2;
+			margin: 20px 0;
+		}
+		.xd-price-card.highlighted .xd-price-divider { border-color: rgba(255,255,255,0.2); }
+		.xd-price-features { list-style: none; padding: 0; margin: 0 0 28px; }
+		.xd-price-features li {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			padding: 7px 0;
+			font-size: 13px;
+			color: #444;
+		}
+		.xd-price-features li i { color: #43a047; font-size: 14px; }
+		.xd-price-card.highlighted .xd-price-features li i { color: #a5d6a7; }
+		/* ===== Vet Portal ===== */
+		.xd-portal {
+			padding: 80px 0;
+			background: #fff;
+		}
+		.xd-portal-box {
+			background: linear-gradient(135deg, #e8f4fd 0%, #fff 100%);
+			border-radius: 20px;
+			padding: 50px 40px;
+			border: 1px solid #c8e6fa;
+			display: flex;
+			align-items: center;
+			gap: 40px;
+			flex-wrap: wrap;
+		}
+		.xd-portal-icon {
+			width: 90px; height: 90px;
+			background: #1565c0;
+			border-radius: 50%;
+			display: flex; align-items: center; justify-content: center;
+			font-size: 36px;
+			color: #fff;
+			flex-shrink: 0;
+		}
+		.xd-portal-content { flex: 1; min-width: 250px; }
+		.xd-portal-content h2 {
+			font-size: 28px;
+			font-weight: 800;
+			color: #1a1a2e;
+			margin-bottom: 12px;
+		}
+		.xd-portal-content p {
+			font-size: 14px;
+			color: #555;
+			line-height: 1.8;
+			margin-bottom: 20px;
+		}
+		.xd-portal-stats {
+			display: flex;
+			gap: 30px;
+			flex-wrap: wrap;
+			margin-top: 16px;
+		}
+		.xd-portal-stat h3 {
+			font-size: 28px;
+			font-weight: 800;
+			color: #1565c0;
+			margin-bottom: 2px;
+		}
+		.xd-portal-stat p {
+			font-size: 12px;
+			color: #888;
+			margin: 0;
+		}
+		/* ===== FAQ ===== */
+		.xd-faq {
+			padding: 80px 0;
+			background: #f8f9fa;
+		}
+		.xd-faq .accordion-button {
+			font-weight: 600;
+			font-size: 15px;
+			color: #1a1a2e;
+		}
+		.xd-faq .accordion-button:not(.collapsed) {
+			color: #1565c0;
+			background: #e3f2fd;
+		}
+		.xd-faq .accordion-body {
+			font-size: 14px;
+			color: #555;
+			line-height: 1.8;
+		}
+		.xd-faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+		@media (max-width: 768px) {
+			.xd-hero h1 { font-size: 28px; }
+			.xd-faq-grid { grid-template-columns: 1fr; }
+			.xd-portal-box { padding: 30px 20px; }
+		}
+	</style>
+</head>
+<body>
+
+    <!-- Preloader Start -->
+	<div class="preloader">
+		<div class="loading-container">
+			<div class="loading"></div>
+			<div id="loading-icon"><img src="images/loader.svg" alt=""></div>
+		</div>
+	</div>
+	<!-- Preloader End -->
+
+    <!-- Header Start -->
+	<header class="main-header">
+		<div class="header-sticky">
+			<nav class="navbar navbar-expand-lg">
+				<div class="container-fluid">
+					<!-- Logo Start -->
+					<a class="navbar-brand" href="./">
+						<img src="logo.png" alt="Logo">
+					</a>
+					<!-- Logo End -->
+
+					<!-- Main Menu Start -->
+					<div class="collapse navbar-collapse main-menu">
+                        <div class="nav-menu-wrapper">
+                            <ul class="navbar-nav mr-auto" id="menu">
+                                <li class="nav-item submenu"><a class="nav-link" href="./">Home</a>
+                                    <ul>
+                                        <li class="nav-item"><a class="nav-link" href="index.html">Home - Main</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="index-image.html">Home - Image</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="index-video.html">Home - Video</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a>
+                                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                                <li class="nav-item submenu"><a class="nav-link" href="#">Pages</a>
+                                    <ul>
+                                        <li class="nav-item"><a class="nav-link" href="service-single.html">Service Details</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="blog-single.html">Blog Details</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="case-study.html">Case Study</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="case-study-single.html">Case Study Details</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="team.html">Our Team</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="team-single.html">Team Details</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing Plan</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="image-gallery.html">Image Gallery</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="video-gallery.html">Video Gallery</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="404.html">404</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Header Btn Start -->
+                        <div class="header-btn">
+                            <a class="btn-default" href="contact.html">Contact Us</a>
+                        </div>
+                        <!-- Header Btn End -->
+					</div>
+					<!-- Main Menu End -->
+					<div class="navbar-toggle"></div>
+				</div>
+			</nav>
+			<div class="responsive-menu"></div>
+		</div>
+	</header>
+	<!-- Header End -->
+
+    <!-- Hero Section Start -->
+    <section class="xd-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="wow fadeInLeft" data-wow-delay="0.1s">
+                        <span class="xd-badge">All-in-One Dairy Farm Management</span>
+                        <h1>X Dairy – <span>Automate Dairy</span> Management System</h1>
+                        <p>X Dairy is an all-in-one dairy farm management system designed to simplify and digitize dairy operations. It lets farmers track animal records, milk production, breeding, culling, and finances from a single platform—eliminating manual processes and reducing errors for better farm efficiency.</p>
+                        <div class="xd-hero-btns">
+                            <a href="#" class="xd-btn xd-btn-primary">Live Demo</a>
+                            <a href="#pricing" class="xd-btn xd-btn-outline">Pricing</a>
+                            <a href="#" class="xd-btn xd-btn-outline">Documentation</a>
+                            <a href="#" class="xd-btn xd-btn-success">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="xd-hero-image wow fadeInRight" data-wow-delay="0.2s">
+                        <img src="images/xdairy.png" alt="X Dairy Management System" style="width:100%;max-width:600px;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.3);display:block;margin:0 auto;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Steps Section Start -->
+    <section class="xd-steps">
+        <div class="container">
+            <div class="xd-section-header">
+                <span class="sub-label">How It Works</span>
+                <h2>Get Started in <span style="color:#1565c0;">4 Simple Steps</span></h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="xd-step-item wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="xd-step-num">1</div>
+                        <div class="xd-step-content">
+                            <h4>Choose and Purchase the X-Dairy Package</h4>
+                            <p>Select the plan that fits your farm's size and needs, then complete your purchase securely.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="xd-step-item wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="xd-step-num">2</div>
+                        <div class="xd-step-content">
+                            <h4>Install and Deploy the System on Your Server</h4>
+                            <p>Follow our simple installation guide to deploy X Dairy on your preferred hosting environment.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="xd-step-item wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="xd-step-num">3</div>
+                        <div class="xd-step-content">
+                            <h4>Configure Your Dairy Farm Data and Settings</h4>
+                            <p>Set up your farm profile, add animals, employees, and configure modules to match your operations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="xd-step-item wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="xd-step-num">4</div>
+                        <div class="xd-step-content">
+                            <h4>Start Managing and Monitoring Your Dairy Farm</h4>
+                            <p>Begin tracking milk production, cow health, finances, and all farm activities in real time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Steps Section End -->
+
+    <!-- Modules Section Start -->
+    <section class="xd-modules" id="modules">
+        <div class="container">
+            <div class="xd-section-header">
+                <span class="sub-label">Complete Solution</span>
+                <h2>10+ Dairy Modules To <span style="color:#1565c0;">Manage Dairy Farm</span></h2>
+                <p>The system includes over ten modules to manage milk collection, cow care, soil labs, health, reproductive feed, suppliers, stock, employees, finance, catalogs and configuration to different farm operations.</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="xd-module-card wow fadeInUp" data-wow-delay="0.05s">
+                        <div class="xd-module-icon"><i class="fa-solid fa-droplet"></i></div>
+                        <h4>Milk Parlor Management</h4>
+                        <p>The Milk Parlor module manages all milk operations including collection sessions, daily milk recording, and discarded milk tracking for error-free reporting.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="xd-module-card wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="xd-module-icon"><i class="fa-solid fa-cow"></i></div>
+                        <h4>Cow Management</h4>
+                        <p>Cow Management modules are sort of fully connected system. Farmers can record important details such as ID, breed, age, and production stage for every animal.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="xd-module-card wow fadeInUp" data-wow-delay="0.15s">
+                        <div class="xd-module-icon"><i class="fa-solid fa-dna"></i></div>
+                        <h4>Reproduction Management</h4>
+                        <p>Reproduction Management is a comprehensive module designed to help dairy farmers efficiently oversee and maintain the health of their herd.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="xd-module-card wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="xd-module-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                        <h4>Health Management</h4>
+                        <p>Health management modules provide accurate, reliable records on animal health conditions, including routine check-ups, symptoms, illnesses and recovery progress.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="xd-module-card wow fadeInUp" data-wow-delay="0.25s">
+                        <div class="xd-module-icon"><i class="fa-solid fa-wheat-awn"></i></div>
+                        <h4>Feed Management</h4>
+                        <p>Feed management helps farmers maintain optimal nutrition for their herd by tracking feed inventory, consumption, and feeding schedules efficiently.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="xd-module-card wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="xd-module-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h4>Finance</h4>
+                        <p>Finance module gives farmers full visibility into farm income and expenses, enabling smarter financial decisions and better profit management.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="xd-module-card wow fadeInUp" data-wow-delay="0.35s">
+                        <div class="xd-module-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                        <h4>Stock Management</h4>
+                        <p>Stock Management helps farmers monitor and control their farm inventory in real time, ensuring supplies are always available and waste is minimized.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="xd-module-card wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="xd-module-icon"><i class="fa-solid fa-users"></i></div>
+                        <h4>Employee Management</h4>
+                        <p>Employee Management helps farmers manage their farm staff efficiently by tracking roles, attendance, task assignments, salaries and performance records.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="xd-module-card wow fadeInUp" data-wow-delay="0.45s">
+                        <div class="xd-module-icon"><i class="fa-solid fa-truck"></i></div>
+                        <h4>Supplier Management</h4>
+                        <p>Supplier Management allows dairy farmers to maintain a structured database of all their suppliers, track purchase orders, and manage supplier relationships.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="xd-module-card wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="xd-module-icon"><i class="fa-solid fa-utensils"></i></div>
+                        <h4>Catering Management</h4>
+                        <p>Catering Management allows dairy farms to organize, plan, and manage all food and catering services provided on the farm premises for staff and visitors.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="xd-module-card wow fadeInUp" data-wow-delay="0.55s">
+                        <div class="xd-module-icon"><i class="fa-solid fa-gear"></i></div>
+                        <h4>Configuration</h4>
+                        <p>Configuration module gives system settings including language, currency, notification management, user access manager, and dairy configuration.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="xd-module-card wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="xd-module-icon"><i class="fa-solid fa-calculator"></i></div>
+                        <h4>Dairy Farm Tools & Calculators</h4>
+                        <p>X Dairy provides various tools and calculators to assist dairy farmers in making accurate, data-driven decisions across their farm operations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Modules Section End -->
+
+    <!-- Milk Parlor Feature Section Start -->
+    <section class="xd-feature-section bg-light-gray">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 wow fadeInLeft">
+                    <div class="xd-screen-mockup">
+                        <div class="xd-screen-header">
+                            <div class="xd-dot red"></div>
+                            <div class="xd-dot yellow"></div>
+                            <div class="xd-dot green"></div>
+                            <span style="color:rgba(255,255,255,0.8);font-size:12px;margin-left:10px;">Milk Parlor Dashboard</span>
+                        </div>
+                        <div class="xd-screen-body">
+                            <div class="xd-table-row">
+                                <div class="xd-table-cell header">Cow ID</div>
+                                <div class="xd-table-cell header">Session</div>
+                                <div class="xd-table-cell header">Milk (L)</div>
+                                <div class="xd-table-cell header">Quality</div>
+                            </div>
+                            <div class="xd-table-row">
+                                <div class="xd-table-cell">C-001</div>
+                                <div class="xd-table-cell">Morning</div>
+                                <div class="xd-table-cell">18.5</div>
+                                <div class="xd-table-cell" style="color:#43a047;font-weight:600;">Grade A</div>
+                            </div>
+                            <div class="xd-table-row">
+                                <div class="xd-table-cell">C-002</div>
+                                <div class="xd-table-cell">Morning</div>
+                                <div class="xd-table-cell">22.1</div>
+                                <div class="xd-table-cell" style="color:#43a047;font-weight:600;">Grade A</div>
+                            </div>
+                            <div class="xd-table-row">
+                                <div class="xd-table-cell">C-003</div>
+                                <div class="xd-table-cell">Morning</div>
+                                <div class="xd-table-cell">15.8</div>
+                                <div class="xd-table-cell" style="color:#ffa726;font-weight:600;">Grade B</div>
+                            </div>
+                            <div style="margin-top:16px;">
+                                <div style="font-size:12px;color:#999;margin-bottom:8px;">Daily Milk Production (Liters)</div>
+                                <div class="xd-chart-bar">
+                                    <div class="xd-bar" style="height:60%;"></div>
+                                    <div class="xd-bar" style="height:75%;"></div>
+                                    <div class="xd-bar" style="height:90%;"></div>
+                                    <div class="xd-bar" style="height:55%;"></div>
+                                    <div class="xd-bar" style="height:80%;"></div>
+                                    <div class="xd-bar" style="height:95%;"></div>
+                                    <div class="xd-bar" style="height:70%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInRight">
+                    <span class="sub-label" style="display:inline-block;background:#e3f2fd;color:#1565c0;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:14px;">Module 01</span>
+                    <h2 class="xd-feature-title">Milk Parlor <span>Management</span></h2>
+                    <p class="xd-feature-text">Milk Parlor Management helps dairy farms efficiently manage daily milk collection and production processes. Farmers can record milk collection data digitally, reducing manual errors and saving time. The module supports better operational efficiency by providing clear visibility into daily production, per-cow yield, and overall farm productivity.</p>
+                    <ul class="xd-feature-list">
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div><strong>Milk Analytics</strong>Track daily, weekly, and monthly milk yield per cow and session. Analyze cow performance over time and identify top producers.</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div><strong>Call Feed Milk</strong>Record discarded milk from the milking machine directly in the system. Easily track and account for milk that fails quality checks.</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div><strong>Collector ID</strong>Assign milk collection tasks to individual collectors using the collector ID system. The module ties each milk collection session to a specific employee.</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div><strong>Sale Milk</strong>Log milk sold directly from the farm to buyers. Track sale volume and generate summaries for financial reporting.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Milk Parlor Feature Section End -->
+
+    <!-- Cow Management Feature Section Start -->
+    <section class="xd-feature-section bg-white">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 wow fadeInLeft">
+                    <span class="sub-label" style="display:inline-block;background:#e3f2fd;color:#1565c0;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:14px;">Module 02</span>
+                    <h2 class="xd-feature-title">Cow <span>Management</span></h2>
+                    <p class="xd-feature-text">Cow Management helps dairy farms efficiently organize and track all cow-related records in one centralized system. Farmers can store important details such as cow ID, breed, age, health status, and production stage. Cow Analytics provides useful insights into herd performance by analyzing milk production levels and overall health trends.</p>
+                    <ul class="xd-feature-list">
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div><strong>Cow Analytics</strong>View detailed performance data for every cow in the herd, including milk yield, health history, and reproductive status.</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div><strong>Manage Cow</strong>Add, update, or retire cow records with full profile details including breed, age, weight, and production data.</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div><strong>Manage Group</strong>Organize cows into groups based on categories like age, breed, or production stage for easier group monitoring.</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div><strong>Animal Profile</strong>Each cow has a complete profile with a full record including ID, breed, age, production level, and health history.</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div><strong>Cow Sale</strong>Log and manage the sale of cows directly within the system. Track sale price, buyer details, and finalize the transaction.</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 wow fadeInRight">
+                    <div class="xd-screen-mockup">
+                        <div class="xd-screen-header">
+                            <div class="xd-dot red"></div>
+                            <div class="xd-dot yellow"></div>
+                            <div class="xd-dot green"></div>
+                            <span style="color:rgba(255,255,255,0.8);font-size:12px;margin-left:10px;">Cow Management Dashboard</span>
+                        </div>
+                        <div class="xd-screen-body">
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">
+                                <div style="background:#e3f2fd;border-radius:8px;padding:14px;text-align:center;">
+                                    <div style="font-size:24px;font-weight:800;color:#1565c0;">248</div>
+                                    <div style="font-size:11px;color:#888;">Total Cows</div>
+                                </div>
+                                <div style="background:#e8f5e9;border-radius:8px;padding:14px;text-align:center;">
+                                    <div style="font-size:24px;font-weight:800;color:#43a047;">231</div>
+                                    <div style="font-size:11px;color:#888;">Active</div>
+                                </div>
+                                <div style="background:#fff3e0;border-radius:8px;padding:14px;text-align:center;">
+                                    <div style="font-size:24px;font-weight:800;color:#ffa726;">12</div>
+                                    <div style="font-size:11px;color:#888;">In Treatment</div>
+                                </div>
+                                <div style="background:#fce4ec;border-radius:8px;padding:14px;text-align:center;">
+                                    <div style="font-size:24px;font-weight:800;color:#e91e63;">5</div>
+                                    <div style="font-size:11px;color:#888;">Dry Off</div>
+                                </div>
+                            </div>
+                            <div class="xd-table-row">
+                                <div class="xd-table-cell header">Cow ID</div>
+                                <div class="xd-table-cell header">Breed</div>
+                                <div class="xd-table-cell header">Age</div>
+                                <div class="xd-table-cell header">Status</div>
+                            </div>
+                            <div class="xd-table-row">
+                                <div class="xd-table-cell">C-001</div>
+                                <div class="xd-table-cell">Holstein</div>
+                                <div class="xd-table-cell">4 yrs</div>
+                                <div class="xd-table-cell" style="color:#43a047;font-weight:600;">Active</div>
+                            </div>
+                            <div class="xd-table-row">
+                                <div class="xd-table-cell">C-002</div>
+                                <div class="xd-table-cell">Jersey</div>
+                                <div class="xd-table-cell">6 yrs</div>
+                                <div class="xd-table-cell" style="color:#ffa726;font-weight:600;">Treatment</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Cow Management Feature Section End -->
+
+    <!-- Health Management Feature Section Start -->
+    <section class="xd-feature-section bg-light-gray">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 wow fadeInLeft">
+                    <div class="xd-screen-mockup">
+                        <div class="xd-screen-header">
+                            <div class="xd-dot red"></div>
+                            <div class="xd-dot yellow"></div>
+                            <div class="xd-dot green"></div>
+                            <span style="color:rgba(255,255,255,0.8);font-size:12px;margin-left:10px;">Health Management</span>
+                        </div>
+                        <div class="xd-screen-body">
+                            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px;">
+                                <div style="background:#e8f5e9;border-radius:8px;padding:12px;text-align:center;">
+                                    <i class="fa-solid fa-shield-heart" style="color:#43a047;font-size:20px;display:block;margin-bottom:6px;"></i>
+                                    <div style="font-size:18px;font-weight:800;color:#43a047;">231</div>
+                                    <div style="font-size:10px;color:#888;">Healthy</div>
+                                </div>
+                                <div style="background:#fff3e0;border-radius:8px;padding:12px;text-align:center;">
+                                    <i class="fa-solid fa-syringe" style="color:#ffa726;font-size:20px;display:block;margin-bottom:6px;"></i>
+                                    <div style="font-size:18px;font-weight:800;color:#ffa726;">12</div>
+                                    <div style="font-size:10px;color:#888;">Treatment</div>
+                                </div>
+                                <div style="background:#e3f2fd;border-radius:8px;padding:12px;text-align:center;">
+                                    <i class="fa-solid fa-flask" style="color:#1565c0;font-size:20px;display:block;margin-bottom:6px;"></i>
+                                    <div style="font-size:18px;font-weight:800;color:#1565c0;">8</div>
+                                    <div style="font-size:10px;color:#888;">Lab Tests</div>
+                                </div>
+                            </div>
+                            <div class="xd-table-row">
+                                <div class="xd-table-cell header">Cow</div>
+                                <div class="xd-table-cell header">Diagnosis</div>
+                                <div class="xd-table-cell header">Treatment</div>
+                                <div class="xd-table-cell header">Status</div>
+                            </div>
+                            <div class="xd-table-row">
+                                <div class="xd-table-cell">C-048</div>
+                                <div class="xd-table-cell">Mastitis</div>
+                                <div class="xd-table-cell">Antibiotics</div>
+                                <div class="xd-table-cell" style="color:#ffa726;font-weight:600;">Ongoing</div>
+                            </div>
+                            <div class="xd-table-row">
+                                <div class="xd-table-cell">C-112</div>
+                                <div class="xd-table-cell">Lameness</div>
+                                <div class="xd-table-cell">Hoof Trim</div>
+                                <div class="xd-table-cell" style="color:#43a047;font-weight:600;">Recovered</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInRight">
+                    <span class="sub-label" style="display:inline-block;background:#e3f2fd;color:#1565c0;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:14px;">Module 04</span>
+                    <h2 class="xd-feature-title">Health <span>Management</span></h2>
+                    <p class="xd-feature-text">Health Management is a comprehensive module designed to help dairy farmers efficiently monitor and manage the health of each animal in the herd. It provides a systematic approach to recording health events, including routine check-ups, symptoms, illnesses, diagnoses, and recovery programs.</p>
+                    <ul class="xd-feature-list">
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div><strong>Health Analytics</strong>Get a complete health overview of your herd with real-time data on disease outbreaks, treatment rates, and recovery trends.</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div><strong>Treatments</strong>Log every treatment administered to your cows, including medications, dosages, and the veterinarian who provided care.</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div><strong>Vaccine Monitor</strong>Schedule and track vaccinations for each cow with automated reminders to ensure herd immunity stays up to date.</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div><strong>Lab Certifications</strong>Store and manage all laboratory test results and certifications linked to individual animals for compliance records.</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div><strong>Hoof Trimming</strong>Schedule and track hoof trimming events to prevent lameness, with records of trimmer, date, and cow condition.</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div><strong>Death Records</strong>Document any animal deaths including cause, date, and associated costs for accurate herd accounting and reporting.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Health Management Feature Section End -->
+
+    <!-- Reproduction Management Feature Section Start -->
+    <section class="xd-feature-section bg-white">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 wow fadeInLeft">
+                    <span class="sub-label" style="display:inline-block;background:#e3f2fd;color:#1565c0;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:14px;">Module 03</span>
+                    <h2 class="xd-feature-title">Reproduction <span>Management</span></h2>
+                    <p class="xd-feature-text">Reproduction Management is a comprehensive module designed to help dairy farmers efficiently oversee and maintain the health of their herd through careful monitoring of all reproductive activities. The system supports breeding program planning, conception tracking, and farm analytics to optimize reproductive efficiency.</p>
+                    <ul class="xd-feature-list">
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div><strong>Reproduction Analytics</strong>Access detailed reproduction reports and statistics including conception rates, calving intervals, and breeding success.</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div><strong>Heat Detector</strong>Log heat detection events and cycle tracking for each cow to identify the optimal breeding window and maximize conception rates.</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div><strong>Artificial Insemination</strong>Record all AI procedures including semen type, technician, date, and outcomes for full reproductive history per cow.</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div><strong>Pregnancy Diagnosis</strong>Track pregnancy confirmation results and expected calving dates to plan herd management and resource allocation.</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div><strong>Calving Management</strong>Record calving events with details on the calf, birth complications, and post-calving cow recovery for complete records.</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div><strong>Dry-Off Management</strong>Plan and manage the dry-off period for each cow to ensure proper preparation for the next lactation cycle.</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 wow fadeInRight">
+                    <div class="xd-screen-mockup">
+                        <div class="xd-screen-header">
+                            <div class="xd-dot red"></div>
+                            <div class="xd-dot yellow"></div>
+                            <div class="xd-dot green"></div>
+                            <span style="color:rgba(255,255,255,0.8);font-size:12px;margin-left:10px;">Reproduction Dashboard</span>
+                        </div>
+                        <div class="xd-screen-body">
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
+                                <div style="background:#e8f5e9;border-radius:8px;padding:14px;">
+                                    <div style="font-size:11px;color:#888;margin-bottom:4px;">Conception Rate</div>
+                                    <div style="font-size:22px;font-weight:800;color:#43a047;">78%</div>
+                                    <div style="height:4px;background:#e0e0e0;border-radius:2px;margin-top:6px;">
+                                        <div style="width:78%;height:100%;background:#43a047;border-radius:2px;"></div>
+                                    </div>
+                                </div>
+                                <div style="background:#e3f2fd;border-radius:8px;padding:14px;">
+                                    <div style="font-size:11px;color:#888;margin-bottom:4px;">Pregnant Cows</div>
+                                    <div style="font-size:22px;font-weight:800;color:#1565c0;">42</div>
+                                    <div style="height:4px;background:#e0e0e0;border-radius:2px;margin-top:6px;">
+                                        <div style="width:60%;height:100%;background:#1565c0;border-radius:2px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="xd-table-row">
+                                <div class="xd-table-cell header">Cow</div>
+                                <div class="xd-table-cell header">Service Date</div>
+                                <div class="xd-table-cell header">Due Date</div>
+                                <div class="xd-table-cell header">Status</div>
+                            </div>
+                            <div class="xd-table-row">
+                                <div class="xd-table-cell">C-015</div>
+                                <div class="xd-table-cell">01 Mar</div>
+                                <div class="xd-table-cell">10 Dec</div>
+                                <div class="xd-table-cell" style="color:#1565c0;font-weight:600;">Pregnant</div>
+                            </div>
+                            <div class="xd-table-row">
+                                <div class="xd-table-cell">C-033</div>
+                                <div class="xd-table-cell">15 Mar</div>
+                                <div class="xd-table-cell">24 Dec</div>
+                                <div class="xd-table-cell" style="color:#43a047;font-weight:600;">Confirmed</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Reproduction Management Feature Section End -->
+
+    <!-- Pricing Section Start -->
+    <section class="xd-pricing" id="pricing">
+        <div class="container">
+            <div class="xd-section-header">
+                <span class="sub-label">Transparent Pricing</span>
+                <h2>X Dairy – <span style="color:#1565c0;">Pricing</span></h2>
+                <p>A Dairy Pricing – Affordable Dairy Farm Management Packages. Choose the plan that fits your farm size and scale as you grow.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="xd-price-card wow fadeInUp" data-wow-delay="0.1s">
+                        <h3>X-Dairy Basic</h3>
+                        <p class="price-desc">Perfect for starting your dairy management journey.</p>
+                        <h2>$299<sub>/mo</sub></h2>
+                        <hr class="xd-price-divider">
+                        <ul class="xd-price-features">
+                            <li><i class="fa-solid fa-check"></i> Dairy Farm</li>
+                            <li><i class="fa-solid fa-check"></i> Full system access</li>
+                            <li><i class="fa-solid fa-check"></i> Lifetime free updates</li>
+                            <li><i class="fa-solid fa-check"></i> 6 Months Support</li>
+                            <li><i class="fa-solid fa-check"></i> 4 Dairy Farms</li>
+                            <li><i class="fa-solid fa-check"></i> No Auto Farm</li>
+                        </ul>
+                        <a href="#" class="btn-default" style="display:block;text-align:center;padding:14px;">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="xd-price-card highlighted wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="xd-price-badge">Most Popular</div>
+                        <h3>X-Dairy Professional</h3>
+                        <p class="price-desc">Best for growing farms needing full management tools.</p>
+                        <h2>$599<sub>/mo</sub></h2>
+                        <hr class="xd-price-divider">
+                        <ul class="xd-price-features">
+                            <li><i class="fa-solid fa-check"></i> Dairy Farm</li>
+                            <li><i class="fa-solid fa-check"></i> Full system access</li>
+                            <li><i class="fa-solid fa-check"></i> Company Installation Included</li>
+                            <li><i class="fa-solid fa-check"></i> Lifetime free updates</li>
+                            <li><i class="fa-solid fa-check"></i> 6-Month Support</li>
+                            <li><i class="fa-solid fa-check"></i> 6 Month Support</li>
+                            <li><i class="fa-solid fa-check"></i> No Auto Farm</li>
+                        </ul>
+                        <a href="#" style="display:block;text-align:center;padding:14px;border-radius:6px;font-weight:700;font-size:13px;background:rgba(255,255,255,0.2);color:#fff;text-decoration:none;border:2px solid rgba(255,255,255,0.4);transition:all 0.3s;">Buy Now</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="xd-price-card wow fadeInUp" data-wow-delay="0.3s">
+                        <h3>X-Dairy Enterprise</h3>
+                        <p class="price-desc">Ideal for large-scale farms requiring premium support.</p>
+                        <h2>$1000<sub>/mo</sub></h2>
+                        <hr class="xd-price-divider">
+                        <ul class="xd-price-features">
+                            <li><i class="fa-solid fa-check"></i> Dairy Farm</li>
+                            <li><i class="fa-solid fa-check"></i> Full system access</li>
+                            <li><i class="fa-solid fa-check"></i> Server Setup Included</li>
+                            <li><i class="fa-solid fa-check"></i> Lifetime free updates</li>
+                            <li><i class="fa-solid fa-check"></i> 6 Month Support</li>
+                            <li><i class="fa-solid fa-check"></i> 4 Dairy Farms</li>
+                            <li><i class="fa-solid fa-check"></i> Auto Farm</li>
+                        </ul>
+                        <a href="contact.html" class="btn-default" style="display:block;text-align:center;padding:14px;">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Pricing Section End -->
+
+    <!-- Vet & Dairy Farm Portal Section Start -->
+    <section class="xd-portal">
+        <div class="container">
+            <div class="xd-portal-box wow fadeInUp">
+                <div class="xd-portal-icon">
+                    <i class="fa-solid fa-stethoscope"></i>
+                </div>
+                <div class="xd-portal-content">
+                    <h2>Vet & Dairy Farm Portal</h2>
+                    <p>The Vet & Dairy Farm Portal gives veterinarians and farm advisors controlled access to your farm data. Vets can log treatments, update health records, and monitor animal conditions remotely. The portal is designed with role-based access to ensure privacy and operational security. It seamlessly connects your farm management team with professional health advisors, providing the collaborative tools needed for modern farm management.</p>
+                    <div class="xd-portal-stats">
+                        <div class="xd-portal-stat">
+                            <h3>500+</h3>
+                            <p>Farms Served</p>
+                        </div>
+                        <div class="xd-portal-stat">
+                            <h3>15K+</h3>
+                            <p>Animals Tracked</p>
+                        </div>
+                        <div class="xd-portal-stat">
+                            <h3>99.9%</h3>
+                            <p>Uptime</p>
+                        </div>
+                        <div class="xd-portal-stat">
+                            <h3>24/7</h3>
+                            <p>Support</p>
+                        </div>
+                    </div>
+                    <div style="margin-top:24px;">
+                        <a href="contact.html" class="btn-default" style="margin-right:12px;">Get Access</a>
+                        <a href="#" class="xd-btn xd-btn-outline" style="color:#1565c0;border-color:#1565c0;">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Vet & Dairy Farm Portal Section End -->
+
+    <!-- FAQ Section Start -->
+    <section class="xd-faq" id="faq">
+        <div class="container">
+            <div class="xd-section-header">
+                <span class="sub-label">Support</span>
+                <h2>Frequently Asked <span style="color:#1565c0;">Questions</span></h2>
+                <p>Find quick answers to the most common questions about X Dairy.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="faq-accordion our-faq-accordion" id="xdFaq1">
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.05s">
+                            <h2 class="accordion-header" id="xdH1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#xdC1" aria-expanded="true" aria-controls="xdC1">
+                                    What Is X Dairy?
+                                </button>
+                            </h2>
+                            <div id="xdC1" class="accordion-collapse collapse show" aria-labelledby="xdH1" data-bs-parent="#xdFaq1">
+                                <div class="accordion-body">X Dairy is an all-in-one dairy farm management system that helps farmers automate and digitize daily operations including milk production, cow health, reproduction tracking, finance, and more from a single platform.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.1s">
+                            <h2 class="accordion-header" id="xdH2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#xdC2" aria-expanded="false" aria-controls="xdC2">
+                                    What Modules Are In X Dairy?
+                                </button>
+                            </h2>
+                            <div id="xdC2" class="accordion-collapse collapse" aria-labelledby="xdH2" data-bs-parent="#xdFaq1">
+                                <div class="accordion-body">X Dairy includes 10+ modules: Milk Parlor Management, Cow Management, Reproduction Management, Health Management, Feed Management, Finance, Stock Management, Employee Management, Supplier Management, Catering, Configuration, and Dairy Tools & Calculators.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.15s">
+                            <h2 class="accordion-header" id="xdH3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#xdC3" aria-expanded="false" aria-controls="xdC3">
+                                    Does X Dairy Support Real-Time Data Analytics?
+                                </button>
+                            </h2>
+                            <div id="xdC3" class="accordion-collapse collapse" aria-labelledby="xdH3" data-bs-parent="#xdFaq1">
+                                <div class="accordion-body">Yes. X Dairy provides real-time dashboards and analytics across all modules, including milk yield analytics, health trend tracking, reproduction rates, and financial summaries.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
+                            <h2 class="accordion-header" id="xdH4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#xdC4" aria-expanded="false" aria-controls="xdC4">
+                                    Can I Customize The System For My Farm?
+                                </button>
+                            </h2>
+                            <div id="xdC4" class="accordion-collapse collapse" aria-labelledby="xdH4" data-bs-parent="#xdFaq1">
+                                <div class="accordion-body">Yes. X Dairy's Configuration module lets you customize language, currency, user roles and permissions, notification settings, and dairy-specific data fields to match your farm's exact workflow.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.25s">
+                            <h2 class="accordion-header" id="xdH5">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#xdC5" aria-expanded="false" aria-controls="xdC5">
+                                    How Do I Get Started With X Dairy?
+                                </button>
+                            </h2>
+                            <div id="xdC5" class="accordion-collapse collapse" aria-labelledby="xdH5" data-bs-parent="#xdFaq1">
+                                <div class="accordion-body">Getting started is simple: Choose a pricing plan, purchase and download the system, follow the installation guide to deploy on your server, configure your farm settings, and start managing your dairy operations immediately.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.3s">
+                            <h2 class="accordion-header" id="xdH6">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#xdC6" aria-expanded="false" aria-controls="xdC6">
+                                    Is My Data Secure?
+                                </button>
+                            </h2>
+                            <div id="xdC6" class="accordion-collapse collapse" aria-labelledby="xdH6" data-bs-parent="#xdFaq1">
+                                <div class="accordion-body">Yes. X Dairy is self-hosted on your own server, meaning your data stays under your full control. The system uses role-based access control and secure authentication to protect your farm's sensitive information.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="faq-accordion our-faq-accordion" id="xdFaq2">
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.05s">
+                            <h2 class="accordion-header" id="xdH7">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#xdC7" aria-expanded="false" aria-controls="xdC7">
+                                    Can I Maintain Individual Cow Records?
+                                </button>
+                            </h2>
+                            <div id="xdC7" class="accordion-collapse collapse" aria-labelledby="xdH7" data-bs-parent="#xdFaq2">
+                                <div class="accordion-body">Yes. Each cow has a complete profile with ID, breed, age, weight, health history, milk production data, and reproductive records all stored in one place for easy access.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.1s">
+                            <h2 class="accordion-header" id="xdH8">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#xdC8" aria-expanded="false" aria-controls="xdC8">
+                                    Does The System Send Alerts Or Reminders?
+                                </button>
+                            </h2>
+                            <div id="xdC8" class="accordion-collapse collapse" aria-labelledby="xdH8" data-bs-parent="#xdFaq2">
+                                <div class="accordion-body">Yes. X Dairy includes automated alerts and reminders for vaccinations, dry-off schedules, expected calving dates, treatment follow-ups, and other critical farm events to keep you on track.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.15s">
+                            <h2 class="accordion-header" id="xdH9">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#xdC9" aria-expanded="false" aria-controls="xdC9">
+                                    Is The System Available In Offline Mode?
+                                </button>
+                            </h2>
+                            <div id="xdC9" class="accordion-collapse collapse" aria-labelledby="xdH9" data-bs-parent="#xdFaq2">
+                                <div class="accordion-body">X Dairy is a web-based system installed on your local server. It can work within a local network without internet access, making it accessible even in areas with limited connectivity.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
+                            <h2 class="accordion-header" id="xdH10">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#xdC10" aria-expanded="false" aria-controls="xdC10">
+                                    Can I Manage Farm Finances With X Dairy?
+                                </button>
+                            </h2>
+                            <div id="xdC10" class="accordion-collapse collapse" aria-labelledby="xdH10" data-bs-parent="#xdFaq2">
+                                <div class="accordion-body">Yes. The Finance module lets you record income and expenses, track profit and loss, manage supplier payments, and generate financial reports to give you full visibility into your farm's financial performance.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.25s">
+                            <h2 class="accordion-header" id="xdH11">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#xdC11" aria-expanded="false" aria-controls="xdC11">
+                                    Does X Dairy Provide Reports And Exports?
+                                </button>
+                            </h2>
+                            <div id="xdC11" class="accordion-collapse collapse" aria-labelledby="xdH11" data-bs-parent="#xdFaq2">
+                                <div class="accordion-body">Yes. X Dairy generates detailed reports across all modules including milk production summaries, health records, reproduction performance, financial statements, and stock levels, with export options for your records.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.3s">
+                            <h2 class="accordion-header" id="xdH12">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#xdC12" aria-expanded="false" aria-controls="xdC12">
+                                    Can Multiple Users Access The System?
+                                </button>
+                            </h2>
+                            <div id="xdC12" class="accordion-collapse collapse" aria-labelledby="xdH12" data-bs-parent="#xdFaq2">
+                                <div class="accordion-body">Yes. X Dairy supports multi-user access with role-based permissions. You can assign different access levels to farm managers, employees, veterinarians, and administrators to match your team structure.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ Section End -->
+
+    <!-- Footer Start -->
+    <footer class="main-footer">
+        <!-- Footer Scrolling Ticker Box Start -->
+        <div class="footer-scrolling-ticker-box">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Footer Scrolling Ticker Start -->
+                        <div class="footer-scrolling-ticker">
+                            <!-- Scrolling Ticker Box Start -->
+                            <div class="scrolling-ticker-box">
+                                <!-- Scrolling Ticker Content Start -->
+                                <div class="scrolling-content">
+                                    <span><img src="images/icon-asterisk.svg" alt=""> Let's  Work Together</span>
+                                    <span><img src="images/icon-asterisk.svg" alt=""> Let's  Work Together</span>
+                                    <span><img src="images/icon-asterisk.svg" alt=""> Let's  Work Together</span>
+                                    <span><img src="images/icon-asterisk.svg" alt=""> Let's  Work Together</span>
+                                </div>
+                                <!-- Scrolling Ticker Content End -->
+
+                                <!-- Scrolling Ticker Content Start -->
+                                <div class="scrolling-content">
+                                    <span><img src="images/icon-asterisk.svg" alt=""> Let's  Work Together</span>
+                                    <span><img src="images/icon-asterisk.svg" alt=""> Let's  Work Together</span>
+                                    <span><img src="images/icon-asterisk.svg" alt=""> Let's  Work Together</span>
+                                    <span><img src="images/icon-asterisk.svg" alt=""> Let's  Work Together</span>
+                                </div>
+                                <!-- Scrolling Ticker Content End -->
+                            </div>
+                            <!-- Scrolling Ticker Box End -->
+
+                            <!-- Footer Contact Button Start -->
+                            <div class="footer-contact-btn">
+                                <a href="contact.html" class="schedule-btn">Contact Us <img src="images/arrow-white.svg" alt=""></a>
+                            </div>
+                            <!-- Footer Contact Button End -->
+                        </div>
+                        <!-- Footer Scrolling Ticker End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Scrolling Ticker Box End -->
+
+		<div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-md-6">
+                    <!-- About Footer Start -->
+                    <div class="about-footer">
+                        <!-- Footer Logo Start -->
+                        <div class="footer-logo">
+                            <img src="logo footer.png" alt="">
+                        </div>
+                        <!-- Footer Logo End -->
+
+                        <!-- About Footer Content Start -->
+                        <div class="about-footer-content">
+                            <p>Building powerful digital solutions that help your business grow and thrive in the digital age.</p>
+                        </div>
+                        <!-- About Footer Content End -->
+                    </div>
+                    <!-- About Footer End -->
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <!-- Footer Location Link Start -->
+                    <div class="footer-location footer-links">
+                        <h3>Our Location</h3>
+                        <p>4517 Washington Ave. Manchester, Kentucky 39495</p>
+                    </div>
+                    <!-- Footer Location Link End -->
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <!-- Footer Contact Start -->
+                    <div class="footer-contact footer-links">
+                        <h3>Contact Information</h3>
+                        <ul>
+                            <li><a href="tel:123456789">+(123) 456-789</a></li>
+                            <li><a href="mailto:info@domainname.com">info@domainname.com</a></li>
+                        </ul>
+                    </div>
+                    <!-- Footer Contact End -->
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <!-- Footer Newsletter Form Start -->
+                    <div class="footer-newsletter-form footer-links">
+                        <h3>Subscribe To Newsletter</h3>
+                        <p>Stay updated with the latest development trends, tools and insights.</p>
+                        <form id="newslettersForm" action="#" method="POST">
+                            <div class="form-group">
+                                <input type="email" name="mail" class="form-control" id="mail" placeholder="Email Address *" required>
+                                <button type="submit" class="newsletter-btn">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Footer Newsletter Form End -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Copyright Start -->
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Footer Copyright Box Start -->
+                        <div class="footer-copyright-box">
+                            <div class="footer-copyright-text">
+                                <p>Copyright © 2025 All Rights Reserved.</p>
+                            </div>
+
+                            <!-- Footer Menu Start -->
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="services.html">services</a></li>
+                                    <li><a href="blog.html">Blogs</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                </ul>
+                            </div>
+                            <!-- Footer Menu End -->
+                        </div>
+                        <!-- Footer Copyright  -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Copyright End -->
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Jquery Library File -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- Circle Progress Js File -->
+    <script src="js/circle-progress.min.js"></script>
+    <!-- Bootstrap js file -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Validator js file -->
+    <script src="js/validator.min.js"></script>
+    <!-- SlickNav js file -->
+    <script src="js/jquery.slicknav.js"></script>
+    <!-- Swiper js file -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <!-- Counter js file -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <!-- Magnific js file -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <!-- SmoothScroll -->
+    <script src="js/SmoothScroll.js"></script>
+    <!-- Parallax js -->
+    <script src="js/parallaxie.js"></script>
+    <!-- MagicCursor js file -->
+    <script src="js/gsap.min.js"></script>
+    <script src="js/magiccursor.js"></script>
+    <!-- Text Effect js file -->
+    <script src="js/SplitText.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <!-- YTPlayer js File -->
+    <script src="js/jquery.mb.YTPlayer.min.js"></script>
+    <!-- Wow js file -->
+    <script src="js/wow.min.js"></script>
+    <!-- Main Custom js file -->
+    <script src="js/function.js"></script>
+</body>
+</html>
