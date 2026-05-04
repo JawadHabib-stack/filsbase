@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => env('APP_TIMEZONE', 'UTC'),
 
     /*
     |--------------------------------------------------------------------------
@@ -84,6 +84,41 @@ return [
 
     'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),
 
+    'available_locales' => [
+        'ar' => 'العربی (AR)',
+        'bn' => 'বাংলা (BN)',
+        'en' => 'English (EN)',
+        'fa' => 'فارسی (FA)',
+        'vi' => 'Vietnamese (VI)',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | User Registration
+    |--------------------------------------------------------------------------
+    |
+    | User registration routes can be disabled using this config.
+    | The default valu is true. But this can be cna be set to false
+    | if needed. USER_REGISTRATION is the key in env file.
+    |
+    */
+
+    'user_registration' => env('USER_REGISTRATION', true),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Initial Username
+    |--------------------------------------------------------------------------
+    |
+    | Usernames is an unique number, generated automatically,
+    | and assigned to the user.
+    | It is needed to have an initial number and will be increased as
+    | a new user registered.
+    |
+    */
+
+    'initial_username' => env('INITIAL_USERNAME', 100000),
+
     /*
     |--------------------------------------------------------------------------
     | Encryption Key
@@ -101,7 +136,7 @@ return [
 
     'previous_keys' => [
         ...array_filter(
-            explode(',', (string) env('APP_PREVIOUS_KEYS', ''))
+            explode(',', env('APP_PREVIOUS_KEYS', ''))
         ),
     ],
 
@@ -122,5 +157,7 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
+
+    'demo_mode' => env('DEMO_MODE', false),
 
 ];
