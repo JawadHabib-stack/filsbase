@@ -506,7 +506,7 @@
             $('.select2-category').select2({
                 theme: 'bootstrap-5',
                 placeholder: '@lang("Select an option")',
-                minimumInputLength: 2,
+                minimumInputLength: 0,
                 allowClear: true,
                 ajax: {
                     url: '{{ route("backend.categories.index_list") }}',
@@ -522,7 +522,7 @@
                             results: data,
                         };
                     },
-                    cache: true,
+                    cache: false,
                 },
             });
 

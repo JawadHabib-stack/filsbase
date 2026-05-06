@@ -153,7 +153,18 @@ class OrdersController extends BackendBaseController
             'notes' => 'nullable|string',
         ]);
 
+        $previousStatus = $order->getOriginal('status');
+
         $order->update($request->only('status', 'payment_status', 'notes'));
+
+        if ($order->wasChanged('status') && $order->user && $order->user->email) {
+            try {
+                \Illuminate\Support\Facades\Mail::to($order->user->email)
+                    ->send(new \App\Mail\OrderStatusMail($order, $previousStatus));
+            } catch (\Exception $e) {
+                \Illuminate\Support\Facades\Log::error('Order status email failed: '.$e->getMessage());
+            }
+        }
 
         flash("Order Updated Successfully")->success()->important();
 

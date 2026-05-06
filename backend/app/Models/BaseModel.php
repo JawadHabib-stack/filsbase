@@ -235,6 +235,8 @@ class BaseModel extends Model implements HasMedia
      */
     public function scopeActive($query): void
     {
-        $query->where('status', '=', 1);
+        $query->where(function ($q) {
+            $q->where('status', '=', 1)->orWhere('status', '=', 'Active');
+        });
     }
 }

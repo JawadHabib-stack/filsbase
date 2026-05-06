@@ -138,6 +138,15 @@ class CheckoutController extends Controller
 
             session()->forget('cart');
 
+            if ($order->user && $order->user->email) {
+                try {
+                    \Illuminate\Support\Facades\Mail::to($order->user->email)
+                        ->send(new \App\Mail\OrderConfirmationMail($order));
+                } catch (\Exception $e) {
+                    \Illuminate\Support\Facades\Log::error('Order confirmation email failed: '.$e->getMessage());
+                }
+            }
+
             return redirect()->route('frontend.checkout.success', $order->order_number)->with('success', 'Order placed successfully!');
         } catch (\Exception $e) {
             DB::rollBack();

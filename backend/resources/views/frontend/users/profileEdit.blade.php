@@ -10,13 +10,15 @@
     <div class="row mb-4">
         <div class="col-md-12 text-center mb-4">
             <div class="position-relative d-inline-block">
-                <img src="{{ asset($user->avatar) }}" alt="{{ $user->name }}" class="rounded-circle shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #eee;">
-                <label for="avatar" class="position-absolute bottom-0 end-0 bg-primary text-white rounded-circle p-2 cursor-pointer shadow" style="cursor: pointer; right: 0; bottom: 0;">
-                    <i class="fa-solid fa-camera"></i>
+                @php $avatarSrc = $user->avatar ? asset($user->avatar) : 'https://ui-avatars.com/api/?name='.urlencode($user->name).'&size=120&background=1565c0&color=fff&rounded=true'; @endphp
+                <img id="avatar-preview" src="{{ $avatarSrc }}" alt="{{ $user->name }}" class="rounded-circle shadow-sm" style="width: 120px; height: 120px; object-fit: cover; border: 3px solid #eee;">
+                <label for="avatar" class="position-absolute bg-primary text-white rounded-circle d-flex align-items-center justify-content-center shadow" style="cursor:pointer;width:34px;height:34px;bottom:4px;right:4px;">
+                    <i class="fa-solid fa-camera" style="font-size:14px;"></i>
                 </label>
-                <input type="file" id="avatar" name="avatar" class="d-none" accept="image/*">
+                <input type="file" id="avatar" name="avatar" class="d-none" accept="image/*"
+                       onchange="document.getElementById('avatar-preview').src = URL.createObjectURL(this.files[0])">
             </div>
-            <p class="text-muted small mt-2">Click icon to change avatar</p>
+            <p class="text-muted small mt-2">Click camera icon to change photo</p>
         </div>
     </div>
 

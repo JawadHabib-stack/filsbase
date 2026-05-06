@@ -68,17 +68,56 @@ class SettingController extends Controller
     public function store(Request $request)
     {
         $rules = Setting::getValidationRules();
-
         $data = $request->validate($rules);
-
         $validSettings = array_keys($rules);
+
+        // SMTP fields that must also be written to .env
+        $smtpMap = [
+            'mail_mailer'     => 'MAIL_MAILER',
+            'mail_host'       => 'MAIL_HOST',
+            'mail_port'       => 'MAIL_PORT',
+            'mail_username'   => 'MAIL_USERNAME',
+            'mail_password'   => 'MAIL_PASSWORD',
+            'mail_encryption' => 'MAIL_ENCRYPTION',
+            'email'           => 'MAIL_FROM_ADDRESS',
+            'mail_from_name'  => 'MAIL_FROM_NAME',
+        ];
 
         foreach ($data as $key => $val) {
             if (in_array($key, $validSettings)) {
                 Setting::add($key, $val, Setting::getDataType($key));
             }
+            if (isset($smtpMap[$key])) {
+                $this->setEnvValue($smtpMap[$key], $val ?? '');
+            }
         }
 
-        return redirect()->back()->with('status', 'Settings has been saved.');
+        // Reconfigure mail on the fly
+        config([
+            'mail.mailers.smtp.host'       => $request->input('mail_host', config('mail.mailers.smtp.host')),
+            'mail.mailers.smtp.port'       => $request->input('mail_port', config('mail.mailers.smtp.port')),
+            'mail.mailers.smtp.username'   => $request->input('mail_username', config('mail.mailers.smtp.username')),
+            'mail.mailers.smtp.password'   => $request->input('mail_password', config('mail.mailers.smtp.password')),
+            'mail.mailers.smtp.encryption' => $request->input('mail_encryption', config('mail.mailers.smtp.encryption')),
+            'mail.default'                 => $request->input('mail_mailer', config('mail.default')),
+            'mail.from.address'            => $request->input('email', config('mail.from.address')),
+            'mail.from.name'               => $request->input('mail_from_name', config('mail.from.name')),
+        ]);
+
+        return redirect()->back()->with('status', 'Settings saved successfully.');
+    }
+
+    private function setEnvValue(string $key, string $value): void
+    {
+        $envPath = base_path('.env');
+        $env = file_get_contents($envPath);
+        $value = str_contains($value, ' ') ? '"'.$value.'"' : ($value ?: 'null');
+
+        if (preg_match("/^{$key}=.*/m", $env)) {
+            $env = preg_replace("/^{$key}=.*/m", "{$key}={$value}", $env);
+        } else {
+            $env .= PHP_EOL."{$key}={$value}";
+        }
+        file_put_contents($envPath, $env);
     }
 }

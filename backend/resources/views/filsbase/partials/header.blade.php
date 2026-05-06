@@ -41,6 +41,7 @@
                                     <ul>
                                         <li class="nav-item"><a class="nav-link" href="{{ route('frontend.products.index') }}">All Products</a></li>
                                         <li class="nav-item"><a class="nav-link" href="{{ route('filsbase.xdairy') }}">X Dairy</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="{{ route('frontend.orders.index') }}">My Orders</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('filsbase.blog') }}">Blog</a></li>
