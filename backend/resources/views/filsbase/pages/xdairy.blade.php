@@ -11,27 +11,27 @@
 	<!-- Page Title -->
     <title>X Dairy - Automate Dairy Management System</title>
 	<!-- Favicon Icon -->
-	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend-images/favicon.png') }}">
 	<!-- Google Fonts Css-->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
 	<!-- Bootstrap Css -->
-	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="{{ asset('frontend-css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
 	<!-- SlickNav Css -->
-	<link href="css/slicknav.min.css" rel="stylesheet">
+	<link href="{{ asset('frontend-css/slicknav.min.css') }}" rel="stylesheet">
 	<!-- Swiper Css -->
-	<link rel="stylesheet" href="css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="{{ asset('frontend-css/swiper-bundle.min.css') }}">
 	<!-- Font Awesome Icon Css-->
-	<link href="css/all.min.css" rel="stylesheet" media="screen">
+	<link href="{{ asset('frontend-css/all.min.css') }}" rel="stylesheet" media="screen">
 	<!-- Animated Css -->
-	<link href="css/animate.css" rel="stylesheet">
+	<link href="{{ asset('frontend-css/animate.css') }}" rel="stylesheet">
     <!-- Magnific Popup Core Css File -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="{{ asset('frontend-css/magnific-popup.css') }}">
 	<!-- Mouse Cursor Css File -->
-	<link rel="stylesheet" href="css/mousecursor.css">
+	<link rel="stylesheet" href="{{ asset('frontend-css/mousecursor.css') }}">
 	<!-- Main Custom Css -->
-	<link href="css/custom.css" rel="stylesheet" media="screen">
+	<link href="{{ asset('frontend-css/custom.css') }}" rel="stylesheet" media="screen">
 	<style>
 		/* ===== X Dairy Global ===== */
 		:root {
@@ -628,7 +628,7 @@
 	<div class="preloader">
 		<div class="loading-container">
 			<div class="loading"></div>
-			<div id="loading-icon"><img src="images/loader.svg" alt=""></div>
+			<div id="loading-icon"><img src="{{ asset('frontend-images/loader.svg') }}" alt=""></div>
 		</div>
 	</div>
 	<!-- Preloader End -->
@@ -655,13 +655,13 @@
         <div class="header-sticky">
             <div class="header-card container-fluid">
                 <nav class="navbar navbar-expand-lg w-100">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{{ route('frontend.index') }}">
                         <img src="logo.png" alt="Logo">
                     </a>
                     <div class="collapse navbar-collapse main-menu">
                         <div class="nav-menu-wrapper">
                             <ul class="navbar-nav mr-auto" id="menu">
-                                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('frontend.index') }}">Home</a></li>
                                 <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                                 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
@@ -681,12 +681,12 @@
                                         <li class="nav-item"><a class="nav-link" href="404.html">404</a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ route('filsbase.contact') }}">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="header-btn">
-                        <a class="btn-default" href="contact.html">Contact Us</a>
+                        <a class="btn-default" href="{{ route('filsbase.contact') }}">Contact Us</a>
                     </div>
                     <div class="navbar-toggle"></div>
                 </nav>
@@ -714,7 +714,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="xd-hero-visual wow fadeInRight" data-wow-delay="0.2s">
-                        <img src="images/xdairy.png" alt="X Dairy Management System" class="xd-hero-main-img">
+                        <img src="{{ asset('frontend-images/xdairy.png') }}" alt="X Dairy Management System" class="xd-hero-main-img">
                     </div>
                 </div>
             </div>
@@ -785,7 +785,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="xd-module-card">
                         <div class="xd-module-head">
-                            <div class="xd-module-icon"><img src="10+dairy images/milk.png" alt="Milk"></div>
+                            <div class="xd-module-icon"><img src="{{ asset('xdairy-images/milk.png') }}" alt="Milk"></div>
                             <h4>Milk Parlor Management</h4>
                         </div>
                         <p>Manages all milk operations including collection sessions. Milk Analytics shows trends, Collect Milk records daily milk, Collection ID tracks entries, Discarded Milk logs spoiled milk, Calf Feed Milk allocates milk for calves, Sale Milk handles sales, and Sale Due Collection tracks pending payments.</p>
@@ -794,7 +794,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="xd-module-card">
                         <div class="xd-module-head">
-                            <div class="xd-module-icon"><img src="10+dairy images/cow.png" alt="Cow"></div>
+                            <div class="xd-module-icon"><img src="{{ asset('xdairy-images/cow.png') }}" alt="Cow"></div>
                             <h4>Cow Management</h4>
                         </div>
                         <p>Handles cow and calf data including performance and organization. Cow Analytics monitors trends, Manage Cow and Manage Cow Calf record animals, Manage Group organizes cows, Animal Profile stores details, and Cow Sale tracks cow transactions for farm management and reporting.</p>
@@ -803,7 +803,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="xd-module-card">
                         <div class="xd-module-head">
-                            <div class="xd-module-icon"><img src="10+dairy images/medicine.png" alt="Health"></div>
+                            <div class="xd-module-icon"><img src="{{ asset('xdairy-images/medicine.png') }}" alt="Health"></div>
                             <h4>Health Management</h4>
                         </div>
                         <p>Health Management monitors animal health and treatments. Health Analytics tracks trends, Case Entry logs cases, Lab Confirmations manages results, Treatments records procedures, Vaccine Monitor tracks vaccinations, Hoof Trimming logs care, and Death Records tracks deceased animals to maintain farm health standards.</p>
@@ -812,7 +812,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="xd-module-card">
                         <div class="xd-module-head">
-                            <div class="xd-module-icon"><img src="10+dairy images/pregnent.png" alt="Reproduction"></div>
+                            <div class="xd-module-icon"><img src="{{ asset('xdairy-images/pregnent.png') }}" alt="Reproduction"></div>
                             <h4>Reproduction Management</h4>
                         </div>
                         <p>This module manages animal reproduction cycles. Reproduction Analytics tracks performance, Heat Detection identifies estrus, Artificial Insemination monitors AI procedures, Pregnancy Diagnosis confirms pregnancies, Calving Management handles births, and Dry-Off Management schedules and tracks dry-off periods efficiently for herd management.</p>
@@ -821,7 +821,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="xd-module-card">
                         <div class="xd-module-head">
-                            <div class="xd-module-icon"><img src="10+dairy images/box.png" alt="Supplier"></div>
+                            <div class="xd-module-icon"><img src="{{ asset('xdairy-images/box.png') }}" alt="Supplier"></div>
                             <h4>Supplier Management</h4>
                         </div>
                         <p>Supplier Management organizes supplier information and activity. Supplier List maintains supplier contacts and records, while Supplier Statistics analyzes supply trends and performance. It ensures smooth procurement, timely delivery, and proper tracking of materials and feed to support farm operations effectively.</p>
@@ -830,7 +830,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="xd-module-card">
                         <div class="xd-module-head">
-                            <div class="xd-module-icon"><img src="10+dairy images/crown.png" alt="Feed"></div>
+                            <div class="xd-module-icon"><img src="{{ asset('xdairy-images/crown.png') }}" alt="Feed"></div>
                             <h4>Feed Management</h4>
                         </div>
                         <p>Feed Management tracks feed allocation and consumption. Feed Analytics analyzes usage, TMR Formulas manages ration plans, Cow Feed allocates feed to animals, and Feeding Schedule organizes feeding times. It ensures proper nutrition, efficient resource usage, and healthy herd growth consistently.</p>
@@ -839,7 +839,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="xd-module-card">
                         <div class="xd-module-head">
-                            <div class="xd-module-icon"><img src="10+dairy images/coin.png" alt="Finance"></div>
+                            <div class="xd-module-icon"><img src="{{ asset('xdairy-images/coin.png') }}" alt="Finance"></div>
                             <h4>Finance</h4>
                         </div>
                         <p>Finance manages farm finances, assets, and expenses. Financial Analysis provides reports, Total Assets tracks overall holdings, Current and Non-current Assets record resources, and Other Expenses logs costs. It ensures accurate accounting, resource management, and financial decision-making for farm profitability.</p>
@@ -848,7 +848,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="xd-module-card">
                         <div class="xd-module-head">
-                            <div class="xd-module-icon"><img src="10+dairy images/dollar.png" alt="Stock"></div>
+                            <div class="xd-module-icon"><img src="{{ asset('xdairy-images/dollar.png') }}" alt="Stock"></div>
                             <h4>Stock Management</h4>
                         </div>
                         <p>Stock Management oversees inventory and supplies. Stock Items and Stock Item Names record items, Stock Transactions logs movements, and Stock Categories and Types organize inventory. It ensures proper stock control, tracking, and availability of feed, medicine, and equipment for efficient farm operations.</p>
@@ -857,7 +857,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="xd-module-card">
                         <div class="xd-module-head">
-                            <div class="xd-module-icon"><img src="10+dairy images/emp.png" alt="Employee"></div>
+                            <div class="xd-module-icon"><img src="{{ asset('xdairy-images/emp.png') }}" alt="Employee"></div>
                             <h4>Employee Management</h4>
                         </div>
                         <p>Employee Management handles staff data and performance. HR Analytics monitors efficiency, Add Staff and Staff List manage employees, User List handles accounts, Employee Salary tracks payments, Attendance records presence, and Designation and User Type assign roles to maintain organized workforce management.</p>
@@ -866,7 +866,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="xd-module-card">
                         <div class="xd-module-head">
-                            <div class="xd-module-icon"><img src="10+dairy images/petinjection.png" alt="Catalog"></div>
+                            <div class="xd-module-icon"><img src="{{ asset('xdairy-images/petinjection.png') }}" alt="Catalog"></div>
                             <h4>Catalog Management</h4>
                         </div>
                         <p>Catalog Management organizes reference data for farm operations. Branch manages locations, Colors and Animal Types categorize animals, Vaccines and Semen Types track medical needs, Drug Types, Units, and Frequencies manage medications, and Disease Categories, Signs, and Lab Tests maintain health records effectively.</p>
@@ -875,7 +875,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="xd-module-card">
                         <div class="xd-module-head">
-                            <div class="xd-module-icon"><img src="10+dairy images/settings.png" alt="Configuration"></div>
+                            <div class="xd-module-icon"><img src="{{ asset('xdairy-images/settings.png') }}" alt="Configuration"></div>
                             <h4>Configuration</h4>
                         </div>
                         <p>Configuration manages system settings, notifications, and logs. Settings and Edit Profile customize the system, Notification Templates and SMTP Settings handle communication, Addon Manager manages extensions, System Status monitors health, and Laravel Log records system activity to ensure smooth operations.</p>
@@ -884,7 +884,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="xd-module-card">
                         <div class="xd-module-head">
-                            <div class="xd-module-icon"><img src="10+dairy images/calculator.png" alt="Tools"></div>
+                            <div class="xd-module-icon"><img src="{{ asset('xdairy-images/calculator.png') }}" alt="Tools"></div>
                             <h4>Dairy Farm Tools &amp; Calculators</h4>
                         </div>
                         <p>X-Dairy provides practical tools and calculators designed to help farmers manage daily dairy operations more efficiently. From milk production and feed requirement calculators to pregnancy due date and medication dosage tools, these utilities simplify farm planning, improve accuracy, and support better decision-making.</p>
@@ -905,7 +905,7 @@
                     <p class="xd-mf-desc">Milk Parlor Management helps dairy farms efficiently manage daily milk collection and production records from a single system. Farmers can record milk collected from each cow, track milking sessions, and monitor cow-wise milk yield in an organized way. The module ensures accurate record-keeping by storing all milk collection data digitally, reducing manual errors and saving time. It also allows farmers to monitor production trends and evaluate herd performance over time. By maintaining clear and structured milk records, the system supports better decision-making, improves farm productivity, and helps dairy farms manage their milk operations more effectively and reliably.</p>
                 </div>
                 <div class="col-lg-6">
-                    <img src="10+dairy images/Milk-Parlor-Management.png" alt="Milk Parlor Management Dashboard" class="xd-mf-img">
+                    <img src="{{ asset('xdairy-images/Milk-Parlor-Management.png') }}" alt="Milk Parlor Management Dashboard" class="xd-mf-img">
                 </div>
             </div>
             <!-- Sub-feature cards -->
@@ -913,7 +913,7 @@
                 <div class="row g-3">
                     <div class="col-lg-4 col-md-6">
                         <div class="xd-feat-card" style="background:#fff2f4;">
-                            <div class="xd-feat-card-icon"><img src="10+dairy images/Milk-Parlor-Management-Milk.png" alt="Milk Analytics"></div>
+                            <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/Milk-Parlor-Management-Milk.png') }}" alt="Milk Analytics"></div>
                             <div class="xd-feat-card-body">
                                 <strong>Milk Analytics</strong>
                                 <p>View detailed analytics of milk production including daily, weekly, and monthly reports. Analyze cow performance, milk yield trends, and production efficiency to improve farm productivity.</p>
@@ -922,7 +922,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="xd-feat-card" style="background:#f3edff;">
-                            <div class="xd-feat-card-icon"><img src="10+dairy images/Milk-Parlor-Management-Milk.png" alt="Collect Milk"></div>
+                            <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/Milk-Parlor-Management-Milk.png') }}" alt="Collect Milk"></div>
                             <div class="xd-feat-card-body">
                                 <strong>Collect Milk</strong>
                                 <p>Record milk collected from each cow during every milking session. Automatically track quantity, time, and cow ID to maintain accurate production records.</p>
@@ -931,7 +931,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="xd-feat-card" style="background:#e3faff;">
-                            <div class="xd-feat-card-icon"><img src="10+dairy images/Milk-Parlor-Management-Milk.png" alt="Collection ID"></div>
+                            <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/Milk-Parlor-Management-Milk.png') }}" alt="Collection ID"></div>
                             <div class="xd-feat-card-body">
                                 <strong>Collection ID</strong>
                                 <p>Generate a unique collection ID for every milk collection entry. This helps track milk batches, manage records easily, and ensure transparency in dairy operations.</p>
@@ -940,7 +940,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="xd-feat-card" style="background:#fff2f4;">
-                            <div class="xd-feat-card-icon"><img src="10+dairy images/Milk-Parlor-Management-Milk.png" alt="Calf Feed Milk"></div>
+                            <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/Milk-Parlor-Management-Milk.png') }}" alt="Calf Feed Milk"></div>
                             <div class="xd-feat-card-body">
                                 <strong>Calf Feed Milk</strong>
                                 <p>Record milk allocated for feeding calves. This helps track calf nutrition and ensures accurate accounting of milk usage within the farm.</p>
@@ -949,7 +949,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="xd-feat-card" style="background:#f3edff;">
-                            <div class="xd-feat-card-icon"><img src="10+dairy images/Milk-Parlor-Management-Milk.png" alt="Sale Milk"></div>
+                            <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/Milk-Parlor-Management-Milk.png') }}" alt="Sale Milk"></div>
                             <div class="xd-feat-card-body">
                                 <strong>Sale Milk</strong>
                                 <p>You can manage milk sales directly from the system. Record sold quantity, buyer details, pricing, invoice generation, and transaction history for smooth dairy sales management.</p>
@@ -958,7 +958,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="xd-feat-card" style="background:#e3faff;">
-                            <div class="xd-feat-card-icon"><img src="10+dairy images/Milk-Parlor-Management-Milk.png" alt="Discarded Milk"></div>
+                            <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/Milk-Parlor-Management-Milk.png') }}" alt="Discarded Milk"></div>
                             <div class="xd-feat-card-body">
                                 <strong>Discarded Milk</strong>
                                 <p>Track milk that is discarded due to health issues, contamination, or quality concerns. Maintain records for compliance, monitoring, and waste reduction.</p>
@@ -967,7 +967,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="xd-feat-card" style="background:#fff2f4;">
-                            <div class="xd-feat-card-icon"><img src="10+dairy images/Milk-Parlor-Management-Milk.png" alt="Sale Due Collection"></div>
+                            <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/Milk-Parlor-Management-Milk.png') }}" alt="Sale Due Collection"></div>
                             <div class="xd-feat-card-body">
                                 <strong>Sale Due Collection</strong>
                                 <p>Track outstanding payments from milk buyers. Monitor due amounts, payment status, and ensure timely collection of milk sale revenue.</p>
@@ -985,7 +985,7 @@
             <!-- Top: image left, text right -->
             <div class="row align-items-center g-5 mb-5">
                 <div class="col-lg-6">
-                    <img src="10+dairy images/Cow Management.png" alt="Cow Management Dashboard" class="xd-mf-img">
+                    <img src="{{ asset('xdairy-images/Cow Management.png') }}" alt="Cow Management Dashboard" class="xd-mf-img">
                 </div>
                 <div class="col-lg-6">
                     <h2 class="xd-mf-title">Cow Management</h2>
@@ -997,7 +997,7 @@
                 <div class="row g-3">
                     <div class="col-lg-4 col-md-6">
                         <div class="xd-feat-card" style="background:#fff2f4;">
-                            <div class="xd-feat-card-icon"><img src="10+dairy images/cow.png" alt="Cow Analytics"></div>
+                            <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/cow.png') }}" alt="Cow Analytics"></div>
                             <div class="xd-feat-card-body">
                                 <strong>Cow Analytics</strong>
                                 <p>Cow Analytics provides insights into herd performance by analyzing production trends, cow productivity, and herd statistics to help farmers make informed management decisions.</p>
@@ -1006,7 +1006,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="xd-feat-card" style="background:#f3edff;">
-                            <div class="xd-feat-card-icon"><img src="10+dairy images/cow.png" alt="Manage Cow"></div>
+                            <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/cow.png') }}" alt="Manage Cow"></div>
                             <div class="xd-feat-card-body">
                                 <strong>Manage Cow</strong>
                                 <p>Manage Cow allows farmers to add, edit, and update detailed cow records, ensuring all important animal information is properly stored and easily accessible.</p>
@@ -1015,7 +1015,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="xd-feat-card" style="background:#e3faff;">
-                            <div class="xd-feat-card-icon"><img src="10+dairy images/cow.png" alt="Manage Cow Calf"></div>
+                            <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/cow.png') }}" alt="Manage Cow Calf"></div>
                             <div class="xd-feat-card-body">
                                 <strong>Manage Cow Calf</strong>
                                 <p>Manage Cow Calf helps track calves born on the farm and maintain their records, supporting proper monitoring of calf growth and herd expansion.</p>
@@ -1024,7 +1024,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="xd-feat-card" style="background:#fff2f4;">
-                            <div class="xd-feat-card-icon"><img src="10+dairy images/cow.png" alt="Manage Group"></div>
+                            <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/cow.png') }}" alt="Manage Group"></div>
                             <div class="xd-feat-card-body">
                                 <strong>Manage Group</strong>
                                 <p>Manage Group allows cows to be organized into groups based on breed, age, or production stage for easier herd management and monitoring.</p>
@@ -1033,7 +1033,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="xd-feat-card" style="background:#f3edff;">
-                            <div class="xd-feat-card-icon"><img src="10+dairy images/cow.png" alt="Animal Profile"></div>
+                            <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/cow.png') }}" alt="Animal Profile"></div>
                             <div class="xd-feat-card-body">
                                 <strong>Animal Profile</strong>
                                 <p>Animal Profile provides a detailed overview of each cow, including health records, production history, and other important animal information.</p>
@@ -1042,7 +1042,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="xd-feat-card" style="background:#e3faff;">
-                            <div class="xd-feat-card-icon"><img src="10+dairy images/cow.png" alt="Cow Sale"></div>
+                            <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/cow.png') }}" alt="Cow Sale"></div>
                             <div class="xd-feat-card-body">
                                 <strong>Cow Sale</strong>
                                 <p>Manage and track cow sales in one place by recording sale details, viewing the complete sale history, and monitoring pending payments from buyers for better financial control.</p>
@@ -1060,7 +1060,7 @@
             <!-- Top: mockup left, text right -->
             <div class="row align-items-center g-5 mb-5">
                 <div class="col-lg-6">
-                    <img src="10+dairy images/HealthManagement.png" alt="Health Management Dashboard" class="xd-mf-img">
+                    <img src="{{ asset('xdairy-images/HealthManagement.png') }}" alt="Health Management Dashboard" class="xd-mf-img">
                 </div>
                 <div class="col-lg-6">
                     <h2 class="xd-mf-title">Health Management</h2>
@@ -1074,21 +1074,21 @@
                     <div class="col-lg-5">
                         <div class="d-flex flex-column gap-3 h-100">
                             <div class="xd-feat-card" style="background:#fff2f4;">
-                                <div class="xd-feat-card-icon"><img src="10+dairy images/medicine.png" alt="Health Analytics"></div>
+                                <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/medicine.png') }}" alt="Health Analytics"></div>
                                 <div class="xd-feat-card-body">
                                     <strong>Health Analytics</strong>
                                     <p>Provides visual reports and insights on herd health trends, disease outbreaks, production impact, and other key metrics to help make data-driven decisions.</p>
                                 </div>
                             </div>
                             <div class="xd-feat-card" style="background:#f3edff;">
-                                <div class="xd-feat-card-icon"><img src="10+dairy images/medicine.png" alt="Case Entry"></div>
+                                <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/medicine.png') }}" alt="Case Entry"></div>
                                 <div class="xd-feat-card-body">
                                     <strong>Case Entry</strong>
                                     <p>Record new health cases for individual cows, including symptoms, diagnosis, severity, and relevant notes for ongoing monitoring.</p>
                                 </div>
                             </div>
                             <div class="xd-feat-card" style="background:#e3faff;">
-                                <div class="xd-feat-card-icon"><img src="10+dairy images/medicine.png" alt="Lab Confirmations"></div>
+                                <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/medicine.png') }}" alt="Lab Confirmations"></div>
                                 <div class="xd-feat-card-body">
                                     <strong>Lab Confirmations</strong>
                                     <p>Store and track laboratory test results for cows, linking them to specific cases for accurate diagnosis and treatment planning.</p>
@@ -1101,7 +1101,7 @@
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="xd-feat-card" style="background:#fff2f4;">
-                                    <div class="xd-feat-card-icon"><img src="10+dairy images/medicine.png" alt="Treatments"></div>
+                                    <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/medicine.png') }}" alt="Treatments"></div>
                                     <div class="xd-feat-card-body">
                                         <strong>Treatments</strong>
                                         <p>Document treatments administered to cows, including medications, dosages, schedules, and outcomes to ensure proper care.</p>
@@ -1110,7 +1110,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="xd-feat-card" style="background:#e3faff;">
-                                    <div class="xd-feat-card-icon"><img src="10+dairy images/medicine.png" alt="Vaccine Monitor"></div>
+                                    <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/medicine.png') }}" alt="Vaccine Monitor"></div>
                                     <div class="xd-feat-card-body">
                                         <strong>Vaccine Monitor</strong>
                                         <p>Manage vaccination schedules, track administered vaccines, and receive reminders for upcoming doses to maintain herd immunity.</p>
@@ -1119,7 +1119,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="xd-feat-card" style="background:#f3edff;">
-                                    <div class="xd-feat-card-icon"><img src="10+dairy images/medicine.png" alt="Hoof Trimming"></div>
+                                    <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/medicine.png') }}" alt="Hoof Trimming"></div>
                                     <div class="xd-feat-card-body">
                                         <strong>Hoof Trimming</strong>
                                         <p>Record hoof care activities, including trimming dates, conditions observed, and follow-up schedules to prevent lameness and maintain mobility.</p>
@@ -1128,7 +1128,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="xd-feat-card" style="background:#fff8f0;">
-                                    <div class="xd-feat-card-icon"><img src="10+dairy images/medicine.png" alt="Death Records"></div>
+                                    <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/medicine.png') }}" alt="Death Records"></div>
                                     <div class="xd-feat-card-body">
                                         <strong>Death Records</strong>
                                         <p>Maintain detailed records of deceased cows, including cause of death, age, and herd impact for farm management and reporting purposes.</p>
@@ -1152,7 +1152,7 @@
                     <p class="xd-mf-desc"><strong>Reproduction Management</strong> is a comprehensive module designed to help dairy farmers efficiently oversee all reproductive activities of their herd. It enables tracking of breeding cycles, mating records, artificial insemination schedules, and pregnancy statuses for every cow. By centralizing reproductive data, farmers can maintain accurate records, plan timely interventions, and improve overall herd fertility. The system supports better decision-making by providing insights into heat detection, breeding efficiency, and calving schedules. With organized reproductive information, farmers can reduce reproductive-related losses, optimize breeding programs, and enhance herd productivity, ensuring healthier cows and higher-quality offspring for sustained farm success.</p>
                 </div>
                 <div class="col-lg-6">
-                    <img src="10+dairy images/Reproduction-Management.png" alt="Reproduction Management Dashboard" class="xd-mf-img">
+                    <img src="{{ asset('xdairy-images/Reproduction-Management.png') }}" alt="Reproduction Management Dashboard" class="xd-mf-img">
                 </div>
             </div>
             <!-- Sub-feature cards: 3-col grid -->
@@ -1160,7 +1160,7 @@
                 <div class="row g-3">
                     <div class="col-lg-4 col-md-6">
                         <div class="xd-feat-card" style="background:#fff2f4;">
-                            <div class="xd-feat-card-icon"><img src="10+dairy images/pregnent.png" alt="Reproduction Analytics"></div>
+                            <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/pregnent.png') }}" alt="Reproduction Analytics"></div>
                             <div class="xd-feat-card-body">
                                 <strong>Reproduction Analytics</strong>
                                 <p>Analyze reproductive performance with reports on conception rates, calving intervals, and breeding efficiency.</p>
@@ -1169,7 +1169,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="xd-feat-card" style="background:#f3edff;">
-                            <div class="xd-feat-card-icon"><img src="10+dairy images/pregnent.png" alt="Heat Detection"></div>
+                            <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/pregnent.png') }}" alt="Heat Detection"></div>
                             <div class="xd-feat-card-body">
                                 <strong>Heat Detection</strong>
                                 <p>Identify and log cows in estrus to ensure timely breeding and maximize conception.</p>
@@ -1178,7 +1178,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="xd-feat-card" style="background:#e3faff;">
-                            <div class="xd-feat-card-icon"><img src="10+dairy images/pregnent.png" alt="Artificial Insemination"></div>
+                            <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/pregnent.png') }}" alt="Artificial Insemination"></div>
                             <div class="xd-feat-card-body">
                                 <strong>Artificial Insemination</strong>
                                 <p>Schedule, record, and monitor AI procedures, semen use, and outcomes for better fertility control.</p>
@@ -1187,7 +1187,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="xd-feat-card" style="background:#f3edff;">
-                            <div class="xd-feat-card-icon"><img src="10+dairy images/pregnent.png" alt="Pregnancy Diagnosis"></div>
+                            <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/pregnent.png') }}" alt="Pregnancy Diagnosis"></div>
                             <div class="xd-feat-card-body">
                                 <strong>Pregnancy Diagnosis</strong>
                                 <p>Record and track pregnancy status using diagnostic tests, supporting early intervention and planning.</p>
@@ -1196,7 +1196,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="xd-feat-card" style="background:#e3faff;">
-                            <div class="xd-feat-card-icon"><img src="10+dairy images/pregnent.png" alt="Calving Management"></div>
+                            <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/pregnent.png') }}" alt="Calving Management"></div>
                             <div class="xd-feat-card-body">
                                 <strong>Calving Management</strong>
                                 <p>Monitor calving events, cow condition, and calf health for smooth deliveries.</p>
@@ -1205,7 +1205,7 @@
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="xd-feat-card" style="background:#fff2f4;">
-                            <div class="xd-feat-card-icon"><img src="10+dairy images/pregnent.png" alt="Dry-Off Management"></div>
+                            <div class="xd-feat-card-icon"><img src="{{ asset('xdairy-images/pregnent.png') }}" alt="Dry-Off Management"></div>
                             <div class="xd-feat-card-body">
                                 <strong>Dry-Off Management</strong>
                                 <p>Plan and track cow dry periods to ensure rest, prevent infections, and optimize future lactation.</p>
@@ -1281,7 +1281,7 @@
                             <span class="xd-price-amount">$1000</span><span class="xd-price-period"> /starting</span>
                         </div>
                         <span class="xd-price-note">Starting from 1000$ and Depending on the Customization you need.</span>
-                        <a href="contact.html" class="xd-price-btn">Contact us</a>
+                        <a href="{{ route('filsbase.contact') }}" class="xd-price-btn">Contact us</a>
                         <hr class="xd-price-divider">
                         <ul class="xd-price-features">
                             <li><span class="xd-price-feat-icon" style="background:#dcfce7;color:#16a34a;"><i class="fa-solid fa-house"></i></span> 1 Dairy Farm</li>
@@ -1305,7 +1305,7 @@
             <!-- Top: icon + text -->
             <div class="xd-vet-box">
                 <div class="xd-vet-icon-wrap">
-                    <img src="10+dairy images/injectionsetting.png" alt="Vet Tested">
+                    <img src="{{ asset('xdairy-images/injectionsetting.png') }}" alt="Vet Tested">
                 </div>
                 <div class="xd-vet-content">
                     <h2>Vet &amp; Dairy Farm Tested</h2>
@@ -1316,13 +1316,13 @@
             <div class="xd-vet-slider">
                 <div class="xd-vet-track" id="xdVetTrack">
                     <div class="xd-vet-slide">
-                        <img src="10+dairy images/Cow Management.png" alt="Cow Management Dashboard">
+                        <img src="{{ asset('xdairy-images/Cow Management.png') }}" alt="Cow Management Dashboard">
                     </div>
                     <div class="xd-vet-slide">
-                        <img src="10+dairy images/HealthManagement.png" alt="Health Management Dashboard">
+                        <img src="{{ asset('xdairy-images/HealthManagement.png') }}" alt="Health Management Dashboard">
                     </div>
                     <div class="xd-vet-slide">
-                        <img src="10+dairy images/Reproduction-Management.png" alt="Reproduction Management Dashboard">
+                        <img src="{{ asset('xdairy-images/Reproduction-Management.png') }}" alt="Reproduction Management Dashboard">
                     </div>
                 </div>
                 <div class="xd-vet-arrows">
@@ -1480,7 +1480,7 @@
                 </div>
             </div>
             <div class="xd-faq-support wow fadeInUp" data-wow-delay="0.2s">
-                <p>Need help? Call our best support team at <a href="tel:+923063403387">(+92 306 3403387)</a> &nbsp;|&nbsp; <a href="contact.html">Contact Us</a></p>
+                <p>Need help? Call our best support team at <a href="tel:+923063403387">(+92 306 3403387)</a> &nbsp;|&nbsp; <a href="{{ route('filsbase.contact') }}">Contact Us</a></p>
             </div>
         </div>
     </section>
@@ -1494,20 +1494,20 @@
                         <div class="footer-scrolling-ticker">
                             <div class="scrolling-ticker-box">
                                 <div class="scrolling-content">
-                                    <span><img src="images/icon-asterisk.svg" alt=""> Let's Work Together</span>
-                                    <span><img src="images/icon-asterisk.svg" alt=""> Let's Work Together</span>
-                                    <span><img src="images/icon-asterisk.svg" alt=""> Let's Work Together</span>
-                                    <span><img src="images/icon-asterisk.svg" alt=""> Let's Work Together</span>
+                                    <span><img src="{{ asset('frontend-images/icon-asterisk.svg') }}" alt=""> Let's Work Together</span>
+                                    <span><img src="{{ asset('frontend-images/icon-asterisk.svg') }}" alt=""> Let's Work Together</span>
+                                    <span><img src="{{ asset('frontend-images/icon-asterisk.svg') }}" alt=""> Let's Work Together</span>
+                                    <span><img src="{{ asset('frontend-images/icon-asterisk.svg') }}" alt=""> Let's Work Together</span>
                                 </div>
                                 <div class="scrolling-content">
-                                    <span><img src="images/icon-asterisk.svg" alt=""> Let's Work Together</span>
-                                    <span><img src="images/icon-asterisk.svg" alt=""> Let's Work Together</span>
-                                    <span><img src="images/icon-asterisk.svg" alt=""> Let's Work Together</span>
-                                    <span><img src="images/icon-asterisk.svg" alt=""> Let's Work Together</span>
+                                    <span><img src="{{ asset('frontend-images/icon-asterisk.svg') }}" alt=""> Let's Work Together</span>
+                                    <span><img src="{{ asset('frontend-images/icon-asterisk.svg') }}" alt=""> Let's Work Together</span>
+                                    <span><img src="{{ asset('frontend-images/icon-asterisk.svg') }}" alt=""> Let's Work Together</span>
+                                    <span><img src="{{ asset('frontend-images/icon-asterisk.svg') }}" alt=""> Let's Work Together</span>
                                 </div>
                             </div>
                             <div class="footer-contact-btn">
-                                <a href="contact.html" class="schedule-btn">Contact Us <img src="images/arrow-white.svg" alt=""></a>
+                                <a href="{{ route('filsbase.contact') }}" class="schedule-btn">Contact Us <img src="{{ asset('frontend-images/arrow-white.svg') }}" alt=""></a>
                             </div>
                         </div>
                     </div>
@@ -1518,7 +1518,7 @@
             <div class="row">
                 <div class="col-xl-3 col-md-6">
                     <div class="about-footer">
-                        <div class="footer-logo"><img src="logo footer.png" alt=""></div>
+                        <div class="footer-logo"><img src="{{ asset('logo footer.png') }}" alt=""></div>
                         <div class="about-footer-content">
                             <p>Building powerful digital solutions that help your business grow and thrive in the digital age.</p>
                         </div>
@@ -1561,11 +1561,11 @@
                             <div class="footer-copyright-text"><p>Copyright &copy; 2025 All Rights Reserved.</p></div>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="{{ route('frontend.index') }}">Home</a></li>
                                     <li><a href="about.html">About Us</a></li>
                                     <li><a href="services.html">Services</a></li>
                                     <li><a href="blog.html">Blogs</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="{{ route('filsbase.contact') }}">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1576,23 +1576,23 @@
     </footer>
     <!-- Footer End -->
 
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/circle-progress.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/validator.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/swiper-bundle.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/SmoothScroll.js"></script>
-    <script src="js/parallaxie.js"></script>
-    <script src="js/gsap.min.js"></script>
-    <script src="js/magiccursor.js"></script>
-    <script src="js/SplitText.min.js"></script>
-    <script src="js/ScrollTrigger.min.js"></script>
-    <script src="js/jquery.mb.YTPlayer.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/function.js"></script>
+    <script src="{{ asset('frontend-js/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ asset('frontend-js/circle-progress.min.js') }}"></script>
+    <script src="{{ asset('frontend-js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('frontend-js/validator.min.js') }}"></script>
+    <script src="{{ asset('frontend-js/jquery.slicknav.js') }}"></script>
+    <script src="{{ asset('frontend-js/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('frontend-js/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('frontend-js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('frontend-js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('frontend-js/SmoothScroll.js') }}"></script>
+    <script src="{{ asset('frontend-js/parallaxie.js') }}"></script>
+    <script src="{{ asset('frontend-js/gsap.min.js') }}"></script>
+    <script src="{{ asset('frontend-js/magiccursor.js') }}"></script>
+    <script src="{{ asset('frontend-js/SplitText.min.js') }}"></script>
+    <script src="{{ asset('frontend-js/ScrollTrigger.min.js') }}"></script>
+    <script src="{{ asset('frontend-js/jquery.mb.YTPlayer.min.js') }}"></script>
+    <script src="{{ asset('frontend-js/wow.min.js') }}"></script>
+    <script src="{{ asset('frontend-js/function.js') }}"></script>
 </body>
 </html>

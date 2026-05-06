@@ -4,67 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a4eaec6f45012cdf8490a67ca9f279aa",
+    "content-hash": "90548a642dd7115d72eaaccc0a6f20b6",
     "packages": [
-        {
-            "name": "Filsbase/module-manager",
-            "version": "v2.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Filsbase/module-manager.git",
-                "reference": "f2f4f5f1ba0cffb89740138d4ae19407dae7edb1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Filsbase/module-manager/zipball/f2f4f5f1ba0cffb89740138d4ae19407dae7edb1",
-                "reference": "f2f4f5f1ba0cffb89740138d4ae19407dae7edb1",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "^v11.0",
-                "php": "^8.1"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "aliases": {
-                        "ModuleManager": "Nasirkhan\\ModuleManager\\ModuleManagerFacade"
-                    },
-                    "providers": [
-                        "Nasirkhan\\ModuleManager\\ModuleManagerServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Nasirkhan\\ModuleManager\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nasir Khan",
-                    "email": "nasir8891@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Module Manager & Generator for Filsbase Kit (https://github.com/Filsbase/laravel-starter)",
-            "homepage": "https://github.com/Filsbase/module-manager",
-            "keywords": [
-                "Filsbase",
-                "laravel-starter",
-                "module-generator",
-                "module-manager"
-            ],
-            "support": {
-                "issues": "https://github.com/Filsbase/module-manager/issues",
-                "source": "https://github.com/Filsbase/module-manager/tree/v2.7.0"
-            },
-            "time": "2024-05-04T06:48:40+00:00"
-        },
         {
             "name": "arcanedev/log-viewer",
             "version": "11.0.1",
@@ -3099,6 +3040,65 @@
                 }
             ],
             "time": "2025-03-24T10:02:05+00:00"
+        },
+        {
+            "name": "nasirkhan/module-manager",
+            "version": "v2.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nasirkhan/module-manager.git",
+                "reference": "f2f4f5f1ba0cffb89740138d4ae19407dae7edb1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nasirkhan/module-manager/zipball/f2f4f5f1ba0cffb89740138d4ae19407dae7edb1",
+                "reference": "f2f4f5f1ba0cffb89740138d4ae19407dae7edb1",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^v11.0",
+                "php": "^8.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "ModuleManager": "Nasirkhan\\ModuleManager\\ModuleManagerFacade"
+                    },
+                    "providers": [
+                        "Nasirkhan\\ModuleManager\\ModuleManagerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Nasirkhan\\ModuleManager\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nasir Khan",
+                    "email": "nasir8891@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Module Manager & Generator for Laravel Starter Kit (https://github.com/nasirkhan/laravel-starter)",
+            "homepage": "https://github.com/nasirkhan/module-manager",
+            "keywords": [
+                "laravel-starter",
+                "module-generator",
+                "module-manager",
+                "nasirkhan"
+            ],
+            "support": {
+                "issues": "https://github.com/nasirkhan/module-manager/issues",
+                "source": "https://github.com/nasirkhan/module-manager/tree/v2.7.0"
+            },
+            "time": "2024-05-04T06:48:40+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -10879,5 +10879,5 @@
         "php": "^8.2"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }

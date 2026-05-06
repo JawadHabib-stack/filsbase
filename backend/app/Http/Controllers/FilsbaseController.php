@@ -93,4 +93,9 @@ class FilsbaseController extends Controller
     {
         return view('filsbase.pages.404');
     }
+
+    public function xdairy()
+    {
+        return view('filsbase.pages.xdairy');
+    }
 }

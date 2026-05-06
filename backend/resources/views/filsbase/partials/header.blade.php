@@ -37,7 +37,12 @@
                                 <li class="nav-item"><a class="nav-link" href="{{ route('frontend.index') }}">Home</a></li>                                
                                 <li class="nav-item"><a class="nav-link" href="{{ route('filsbase.about') }}">About Us</a>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('filsbase.services') }}">Services</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{{ route('frontend.products.index') }}">Products</a></li>
+                                <li class="nav-item submenu"><a class="nav-link" href="{{ route('frontend.products.index') }}">Products</a>
+                                    <ul>
+                                        <li class="nav-item"><a class="nav-link" href="{{ route('frontend.products.index') }}">All Products</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="{{ route('filsbase.xdairy') }}">X Dairy</a></li>
+                                    </ul>
+                                </li>
                                 <li class="nav-item"><a class="nav-link" href="{{ route('filsbase.blog') }}">Blog</a></li>
                                 <li class="nav-item submenu"><a class="nav-link" href="#">Pages</a>
                                     <ul>                                        
