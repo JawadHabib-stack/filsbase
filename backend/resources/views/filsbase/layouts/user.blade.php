@@ -37,6 +37,9 @@
                             <a href="{{ route('frontend.users.profileEdit') }}" class="list-group-item list-group-item-action {{ request()->routeIs('frontend.users.profileEdit') ? 'active' : '' }}" style="padding: 15px 20px; font-weight: 500;">
                                 <i class="fa-regular fa-pen-to-square mr-2" style="width: 20px;"></i> Edit Profile
                             </a>
+                            <a href="{{ route('frontend.orders.index') }}" class="list-group-item list-group-item-action {{ request()->routeIs('frontend.orders.*') ? 'active' : '' }}" style="padding: 15px 20px; font-weight: 500;">
+                                <i class="fa-solid fa-bag-shopping mr-2" style="width: 20px;"></i> My Orders
+                            </a>
                             <a href="{{ route('frontend.users.changePassword') }}" class="list-group-item list-group-item-action {{ request()->routeIs('frontend.users.changePassword') ? 'active' : '' }}" style="padding: 15px 20px; font-weight: 500;">
                                 <i class="fa-solid fa-lock mr-2" style="width: 20px;"></i> Change Password
                             </a>

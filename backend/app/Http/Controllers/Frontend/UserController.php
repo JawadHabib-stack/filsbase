@@ -102,10 +102,18 @@ class UserController extends Controller
         $$module_name_singular = $module_model::whereUsername($username)->first();
 
         $body_class = 'profile-page';
-
         $meta_page_type = 'profile';
 
-        return view("frontend.{$module_name}.profile", compact('module_name', 'module_name_singular', "{$module_name_singular}", 'module_icon', 'module_action', 'module_title', 'body_class', 'meta_page_type'));
+        $uid = auth()->id();
+        $stats = [
+            'total_orders'    => \Modules\Order\Models\Order::where('user_id', $uid)->count(),
+            'total_spent'     => \Modules\Order\Models\Order::where('user_id', $uid)->sum('total_amount'),
+            'pending_orders'  => \Modules\Order\Models\Order::where('user_id', $uid)->where('status', 'Pending')->count(),
+            'completed_orders'=> \Modules\Order\Models\Order::where('user_id', $uid)->where('status', 'Completed')->count(),
+        ];
+        $recent_orders = \Modules\Order\Models\Order::where('user_id', $uid)->latest()->limit(5)->get();
+
+        return view("frontend.{$module_name}.profile", compact('module_name', 'module_name_singular', "{$module_name_singular}", 'module_icon', 'module_action', 'module_title', 'body_class', 'meta_page_type', 'stats', 'recent_orders'));
     }
 
     /**
@@ -189,8 +197,8 @@ class UserController extends Controller
 
         $$module_name_singular = $module_model::findOrFail($id);
 
-        // TODO: Use validated data
-        $data = $request->all();
+        // Update profile fields — exclude avatar to prevent overwriting with empty string
+        $data = $request->except(['avatar', '_token', '_method']);
         $$module_name_singular->update($data);
 
         // Handle Avatar upload
@@ -202,7 +210,6 @@ class UserController extends Controller
             $media = $$module_name_singular->addMedia($request->file('avatar'))->toMediaCollection($module_name);
 
             $$module_name_singular->avatar = $media->getUrl();
-
             $$module_name_singular->save();
         }
 

@@ -52,16 +52,93 @@ return [
 
         'elements' => [
             [
-                'type' => 'email', // input fields type
-                'data' => 'string', // data type, string, int, boolean
-                'name' => 'email', // unique name for field
-                'label' => 'Email', // you know what label it is
-                'rules' => 'required|email', // validation rule of laravel
-                'class' => '', // any class for input
-                'value' => 'info@example.com', // default value if you want
+                'type' => 'email',
+                'data' => 'string',
+                'name' => 'email',
+                'label' => 'From Email Address',
+                'rules' => 'required|email',
+                'class' => '',
+                'value' => 'info@example.com',
+            ],
+            [
+                'type' => 'text',
+                'data' => 'string',
+                'name' => 'mail_from_name',
+                'label' => 'From Name',
+                'rules' => 'nullable',
+                'class' => '',
+                'value' => 'Filsbase',
             ],
         ],
+    ],
 
+    'smtp' => [
+        'title' => 'SMTP / Mail Server',
+        'desc' => 'Configure outgoing mail server. Changes are saved to .env and take effect immediately.',
+        'icon' => 'fas fa-server',
+
+        'elements' => [
+            [
+                'type' => 'select',
+                'data' => 'string',
+                'name' => 'mail_mailer',
+                'label' => 'Mail Driver',
+                'rules' => 'required',
+                'class' => '',
+                'value' => 'smtp',
+                'options' => ['smtp' => 'SMTP', 'log' => 'Log (Testing)', 'sendmail' => 'Sendmail'],
+            ],
+            [
+                'type' => 'text',
+                'data' => 'string',
+                'name' => 'mail_host',
+                'label' => 'SMTP Host',
+                'rules' => 'nullable',
+                'class' => '',
+                'value' => 'smtp.gmail.com',
+                'help' => 'e.g. smtp.gmail.com, smtp.mailtrap.io',
+            ],
+            [
+                'type' => 'number',
+                'data' => 'int',
+                'name' => 'mail_port',
+                'label' => 'SMTP Port',
+                'rules' => 'nullable|integer',
+                'class' => '',
+                'value' => '587',
+                'help' => '587 (TLS) or 465 (SSL)',
+            ],
+            [
+                'type' => 'text',
+                'data' => 'string',
+                'name' => 'mail_username',
+                'label' => 'SMTP Username',
+                'rules' => 'nullable',
+                'class' => '',
+                'value' => '',
+                'help' => 'Your email address or SMTP username',
+            ],
+            [
+                'type' => 'text',
+                'data' => 'string',
+                'name' => 'mail_password',
+                'label' => 'SMTP Password / App Password',
+                'rules' => 'nullable',
+                'class' => '',
+                'value' => '',
+                'help' => 'For Gmail: use an App Password (not your login password)',
+            ],
+            [
+                'type' => 'select',
+                'data' => 'string',
+                'name' => 'mail_encryption',
+                'label' => 'Encryption',
+                'rules' => 'nullable',
+                'class' => '',
+                'value' => 'tls',
+                'options' => ['tls' => 'TLS', 'ssl' => 'SSL', '' => 'None'],
+            ],
+        ],
     ],
     'social' => [
         'title' => 'Social Profiles',

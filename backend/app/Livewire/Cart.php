@@ -28,7 +28,7 @@ class Cart extends Component
             $this->cart[$productId] = [
                 'id' => $product->id,
                 'name' => $product->name,
-                'price' => $product->price,
+                'price' => $product->sale_price ?: $product->price,
                 'quantity' => $quantity,
                 'image' => $product->image,
                 'slug' => $product->slug,

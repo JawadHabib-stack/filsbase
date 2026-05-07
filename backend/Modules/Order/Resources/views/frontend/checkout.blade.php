@@ -111,6 +111,21 @@
                                             <div id="card-errors" role="alert" class="text-danger small mt-2"></div>
                                         @elseif($method->slug == 'paypal')
                                             <div id="paypal-button-container" class="mt-3 d-none"></div>
+                                        @elseif($method->slug == 'bank-transfer')
+                                            @php $bs = $method->settings ?? []; @endphp
+                                            <div class="mt-3 p-3 border rounded bg-light small ms-4 ps-2">
+                                                <strong>Bank Details:</strong><br>
+                                                Bank: {{ $bs['bank_name'] ?? '' }}<br>
+                                                Account Name: {{ $bs['account_name'] ?? '' }}<br>
+                                                Account No: {{ $bs['account_number'] ?? '' }}<br>
+                                                IBAN: {{ $bs['iban'] ?? '' }}<br>
+                                                <span class="text-muted">{{ $bs['instructions'] ?? '' }}</span>
+                                            </div>
+                                        @elseif($method->slug == 'cod')
+                                            @php $cs = $method->settings ?? []; @endphp
+                                            <div class="mt-2 ms-4 ps-2 small text-muted">
+                                                <i class="fa-solid fa-circle-info me-1"></i> {{ $cs['instructions'] ?? 'Pay cash upon delivery.' }}
+                                            </div>
                                         @endif
                                     </div>
                                 @endforeach
@@ -168,7 +183,7 @@
 @php
     $paypalMethod = $payment_methods->where('slug', 'paypal')->first();
     $paypalSettings = $paypalMethod->settings ?? [];
-    if (empty($paypalSettings) && $paypalMethod->config) {
+    if (empty($paypalSettings) && $paypalMethod && $paypalMethod->config) {
         $paypalSettings = json_decode($paypalMethod->config, true);
     }
     $paypalClientId = $paypalSettings['client_id'] ?? '';
@@ -206,7 +221,7 @@
         @php
             $stripeMethod = $payment_methods->where('slug', 'stripe')->first();
             $settings = $stripeMethod->settings ?? [];
-            if (empty($settings) && $stripeMethod->config) {
+            if (empty($settings) && $stripeMethod && $stripeMethod->config) {
                 $settings = json_decode($stripeMethod->config, true);
             }
             $publicKey = $settings['public_key'] ?? '';

@@ -40,6 +40,7 @@ Route::get('/video-gallery', [FilsbaseController::class, 'videoGallery'])->name(
 Route::get('/faqs', [FilsbaseController::class, 'faqs'])->name('filsbase.faqs');
 Route::get('/contact', [FilsbaseController::class, 'contact'])->name('filsbase.contact');
 Route::get('/404', [FilsbaseController::class, 'notFound'])->name('filsbase.404');
+Route::get('/x-dairy', [FilsbaseController::class, 'xdairy'])->name('filsbase.xdairy');
 
 // home route
 Route::get('home', [FilsbaseController::class, 'home'])->name('home');

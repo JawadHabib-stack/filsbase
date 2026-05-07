@@ -25,6 +25,10 @@ Route::group(['namespace' => '\Modules\Order\Http\Controllers\Frontend', 'as' =>
         Route::post('checkout', ['as' => 'checkout.store', 'uses' => 'CheckoutController@store']);
         Route::get('checkout/success/{orderNumber}', ['as' => 'checkout.success', 'uses' => 'CheckoutController@success']);
         
+        // My Orders Routes
+        Route::get('my-orders', ['as' => 'orders.index', 'uses' => 'MyOrdersController@index']);
+        Route::get('my-orders/{orderNumber}', ['as' => 'orders.show', 'uses' => 'MyOrdersController@show']);
+
         // Stripe Routes
         Route::post('payment/stripe/create-intent', ['as' => 'payment.stripe.create-intent', 'uses' => 'StripePaymentController@createPaymentIntent']);
         
